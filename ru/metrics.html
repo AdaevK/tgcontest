@@ -1,0 +1,3301 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Mindful Squirrel &dash; bba38fb &dash; Data Clustering Contest</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="../icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../icons/favicon-16x16.png">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/contest-zoo.css">
+    <script src="../js/jquery-3.4.1.slim.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <style>.brand-photo{display:inline-block;width:40px;height:40px;margin:-.3125rem 0;text-align:center;vertical-align:top;overflow:hidden;}.brand-name{font-size:18px;line-height:16px;font-weight:500;vertical-align:top;margin:.125rem .25rem 0 1rem!important;}.brand-name small{display:inline-block;font-size:13px;font-weight:400;margin-top:.25rem;}.card-cover{width:180px;background:no-repeat center;background-size:cover;border-radius:0 .25rem .25rem 0;display:none;}.text-secondary{color:#6f42c1!important;}.text-truncate-3,.text-truncate-4,.text-truncate-5{display:-webkit-box;-webkit-box-orient:vertical;overflow:hidden;text-overflow:ellipsis;}.text-truncate-3{-webkit-line-clamp:3;}.text-truncate-4{-webkit-line-clamp:4;}.text-truncate-5{-webkit-line-clamp:5;}.thread:not(:last-child){flex-grow:1;max-width:100%;}.thread.show{flex:0 0 100%;max-width:100%;}.thread.show .card-body{background-color:#f8f9fa!important;}.btn-outline-warning:hover{color:#fff;}.dropdown-toggle:after{margin-left:.5em;vertical-align:.15em;}</style>
+     <script>
+      $(document).on('show.bs.collapse', '.collapse', function () {
+        $(this).parents('.thread').addClass('show');
+      });
+      $(document).on('hidden.bs.collapse', '.collapse', function () {
+        $(this).parents('.thread').removeClass('show');
+      });
+    </script>
+</head>
+<body class="d-flex flex-column h-100">
+    <header class="bg-light fixed-top">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-light px-0 px-sm-3">
+                <a class="navbar-brand py-0" href="">
+                    <span class="brand-photo rounded-circle"><i class="animal-photo squirrel bc4"></i></span><span class="brand-name d-none d-sm-inline-block"><div><span dir="auto" class="tc4">Mindful Squirrel<span class="d-none d-md-inline"> News</span></span></div><small class="text-muted">vbba38fb</small></span>
+                </a>
+                <div class="flex-fill">
+                    <button class="btn btn-sm btn-outline-secondary" type="button" id="dropdownDateButton">ru_cat_target.json</button>
+                </div>
+                <div class="btn-group btn-group-sm mx-2 mx-sm-3 mx-md-4">
+                    <a class="btn  btn-outline-secondary " href="../en/metrics.html">EN</a>
+                    <a class="btn  btn-secondary " href="../ru/metrics.html">RU</a>
+                </div>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse flex-grow-0" id="navbarSupportedContent">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="../ru/main.html">Top</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="../ru/metrics.html">Metrics</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <main class="flex-shrink-0 py-5">
+        <div class="container pt-2 pb-1">
+            
+
+<h1>Categories</h1>
+<div>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Category</th>
+      <th scope="col">Precision</th>
+      <th scope="col">Recall</th>
+      <th scope="col">F-1 score</th>
+      <th scope="col">Support</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <th scope="row">society</th>
+      <td>0.969</td>
+      <td>0.969</td>
+      <td>0.969</td>
+      <td>456</td>
+    </tr>
+    
+    <tr>
+      <th scope="row">sports</th>
+      <td>0.986</td>
+      <td>1.0</td>
+      <td>0.993</td>
+      <td>73</td>
+    </tr>
+    
+    <tr>
+      <th scope="row">economy</th>
+      <td>0.846</td>
+      <td>0.965</td>
+      <td>0.902</td>
+      <td>57</td>
+    </tr>
+    
+    <tr>
+      <th scope="row">entertainment</th>
+      <td>0.941</td>
+      <td>0.889</td>
+      <td>0.914</td>
+      <td>54</td>
+    </tr>
+    
+    <tr>
+      <th scope="row">technology</th>
+      <td>0.955</td>
+      <td>0.808</td>
+      <td>0.875</td>
+      <td>26</td>
+    </tr>
+    
+    <tr>
+      <th scope="row">science</th>
+      <td>0.895</td>
+      <td>0.944</td>
+      <td>0.919</td>
+      <td>18</td>
+    </tr>
+    
+    <tr>
+      <th scope="row">other</th>
+      <td>0.917</td>
+      <td>0.786</td>
+      <td>0.846</td>
+      <td>14</td>
+    </tr>
+    
+    <tr>
+      <th scope="row">not_news</th>
+      <td>0.571</td>
+      <td>0.5</td>
+      <td>0.533</td>
+      <td>8</td>
+    </tr>
+    
+    <tr>
+      <th scope="row"> Macro avg </th>
+      <td>0.885</td>
+      <td>0.858</td>
+      <td>0.869</td>
+      <td>706</td>
+    </tr>
+    <tr>
+      <th scope="row"> Accuracy </th>
+      <td></td>
+      <td></td>
+      <td>0.95</td>
+      <td>706</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+<details>
+<summary>Errors</summary>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Title</th>
+      <th scope="col">Prediction</th>
+      <th scope="col">Gold</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td><a href=https://35media.ru/articles/2020/05/08/eta-nedelya-100-let-nazad>Эта неделя 100 лет назад</a></td>
+      <td>society</td>
+      <td>not_news</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://actualnews.org/exclusive/344728-v-gosdume-raskritikovali-prodazhi-avtomobilej-naprjamuju-s-zavodov.html>В Госдуме раскритиковали продажи автомобилей напрямую с заводов</a></td>
+      <td>society</td>
+      <td>economy</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://ain.ua/2020/05/05/u-facebook-3-mlrd-polzovatelej/>Приложениями Facebook ежемесячно пользуется более 3 млрд человек. Это 2/3 всех интернет-пользователей</a></td>
+      <td>economy</td>
+      <td>technology</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://ain.ua/2020/05/07/glovo-v-borispole-i-brovarax/>Сервис Glovo заработал в Борисполе и Броварах</a></td>
+      <td>society</td>
+      <td>economy</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://culturavrn.ru/society/30363>Губернатор Александр Гусев отчитался о доходах за 2019 год</a></td>
+      <td>economy</td>
+      <td>society</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://glasnarod.ru/novosti/2-raznye-novosti/318906-ministerstvo-kultury-priglashaet-zabajkalczev-prinyat-uchastie-v-akczii-lokna-pobedyr>Министерство культуры приглашает забайкальцев принять участие в акции «Окна Победы»</a></td>
+      <td>society</td>
+      <td>entertainment</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://info24.ru/news/rossii-predskazali-ochen-zharkoe-leto-i-torfyanye-pozhary.html>России предсказали очень жаркое лето и торфяные пожары</a></td>
+      <td>society</td>
+      <td>other</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://interfax.com.ua/news/general/660123.html>Помощь США Украине на борьбу с пандемией Covid-19 увеличилась до $14,5 млн - посольство</a></td>
+      <td>economy</td>
+      <td>society</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://iz.ru/1009584/2020-05-10/vrach-predupredil-ob-opasnosti-vykhoda-iz-doma-v-zharu-v-usloviiakh-pandemii>Врач предупредила об опасности выхода из дома в жару в условиях пандемии</a></td>
+      <td>other</td>
+      <td>society</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://iz.ru/1009590/2020-05-10/analitiki-nazvali-samye-prodavaemye-gruppy-lekarstv-v-rossii>Аналитики назвали самые продаваемые группы лекарств в России</a></td>
+      <td>economy</td>
+      <td>society</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://kanobu.ru/news/chego-zhdat-otxbox-v2020-godu-423861/>Чего ждать от Xbox в 2020 году</a></td>
+      <td>entertainment</td>
+      <td>technology</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://mos.news/news/zelao/kak-ne-stat-zhertvoy-moshennikov-rasskazyvaet-politsiya-zelenograda--134776/>Как не стать жертвой мошенников: рассказывает полиция Зеленограда</a></td>
+      <td>not_news</td>
+      <td>society</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://mosregtoday.ru/soc/aeroporty-sheremet-evo-i-domodedovo-voshli-v-troyku-luchshih/>Аэропорты Шереметьево и Домодедово вошли в тройку лучших</a></td>
+      <td>economy</td>
+      <td>society</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://nag.ru/news/newsline/106889/-sbermobayl-rasschityivaet-na-chastotyi-dlya-5g-svyazi.html>“Сбермобайл” рассчитывает на частоты для 5G-связи</a></td>
+      <td>economy</td>
+      <td>technology</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://nevasport.ru/140688-idioty-pishut-vsyakuyu-erundu-zhulin-v-shoke-ot-skandala-vokrug-syna-plyushhenko/>«Идиоты пишут всякую ерунду»: Жулин в шоке от скандала вокруг сына Плющенко</a></td>
+      <td>sports</td>
+      <td>entertainment</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://news.finance.ua/ru/news/-/470468/ukrainskim-pensioneram-v-mae-uzhe-vyplatili-11-5-mlrd-grn>Украинским пенсионерам в мае уже выплатили 11,5 млрд грн</a></td>
+      <td>economy</td>
+      <td>society</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://pobeda26.ru/novosti/proisshestviya/na-stavropole-ozhidaetsya-groza-s-shkvalistyim-vetrom>На Ставрополье ожидается гроза с шквалистым ветром</a></td>
+      <td>society</td>
+      <td>other</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://polit.info/494558-ssha-hotyat-ispolzovat-sobstvennye-korabli-dlya-sovmestnyh-s-rf-poletov-na-mks>США хотят использовать собственные корабли для совместных с РФ полетов на МКС</a></td>
+      <td>technology</td>
+      <td>society</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://pravo.ru/news/221465/>Минприроды готовит план по внедрению раздельного сбора мусора</a></td>
+      <td>economy</td>
+      <td>society</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://ria-m.tv/news/191804/politsiya_snyala_deruschihsya_na_ulitse_tallinna_zaytsev_(video).html>Полиция сняла дерущихся на улице Таллинна зайцев (видео)</a></td>
+      <td>society</td>
+      <td>other</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://strana.ua/news/266316-donald-i-melanija-tramp-vozlozhili-venki-k-memorialu-v-chest-dnja-pobedy.html>Дональд и Мелания Трамп в стильных образах возложили венки к мемориалу Второй мировой. Фото</a></td>
+      <td>entertainment</td>
+      <td>society</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://superomsk.ru/news/88491-yota_zapustila_proekt_pro_samoizolyatsiyu_kotory_n/>Yota запустила проект про самоизоляцию, который ничего не советует</a></td>
+      <td>not_news</td>
+      <td>technology</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://t-l.ru/282905.html>Праздничный концерт пройдет у каждого дома ветерана Великой Отечественной войны в Казанском районе</a></td>
+      <td>society</td>
+      <td>entertainment</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://takiedela.ru/2020/05/na-raspade/>На Распаде</a></td>
+      <td>society</td>
+      <td>not_news</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://tass.ru/ekonomika/8399167>"Алроса" приостановит с 15 мая работы на руднике "Айхал" и карьере "Заря" в Якутии</a></td>
+      <td>economy</td>
+      <td>society</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://tass.ru/obschestvo/8402811>Магаданский оркестр объединил артистов России в уникальный проект "Символ Победы"</a></td>
+      <td>society</td>
+      <td>entertainment</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://topspb.tv/news/2020/05/6/v-minzdrave-rasskazali-ob-ispytaniyah-vakcin-ot-koronavirusa/>В Минздраве рассказали об испытаниях вакцин от коронавируса</a></td>
+      <td>society</td>
+      <td>science</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://tsargrad.tv/news/onishhenko-predupredil-o-koronaviruse-v-holodilnike-tam-on-horosho-sohranjaetsja_252716>Онищенко предупредил о коронавирусе в холодильнике: "Там он хорошо сохраняется"</a></td>
+      <td>science</td>
+      <td>society</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://white.d3.ru/muzeinye-starushki-1975278/>Музейные старушки</a></td>
+      <td>entertainment</td>
+      <td>not_news</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://www.iphones.ru/iNotes/veshch-brelok-prevrashchayushchiy-iphone-v-universalnyy-pult-05-07-2020>Вещь. Инфракрасный порт для iPhone, чтобы управлять телевизором</a></td>
+      <td>not_news</td>
+      <td>technology</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://www.mk.ru/social/2020/05/05/uchenye-iz-knr-prizvali-italyanskie-vlasti-prodlit-karantin-do-avgusta.html>Ученые из КНР призвали итальянские власти продлить карантин до августа</a></td>
+      <td>science</td>
+      <td>society</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://www.mk.ru/social/2020/05/08/voz-do-konca-goda-na-borbu-s-pandemiey-potrebuetsya-17-mlrd.html>ВОЗ: до конца года на борьбу с пандемией потребуется $1,7 млрд</a></td>
+      <td>economy</td>
+      <td>society</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://www.panram.ru/news/society/v-rostovskoy-leventsovke-ansambl-pesni-i-plyaski-yuvo-ustroil-kontsert-dlya-desyatka-veteranov/>В ростовской Левенцовке ансамбль песни и пляски ЮВО устроил концерт для ветеранов</a></td>
+      <td>society</td>
+      <td>entertainment</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://www.sq.com.ua/rus/news/polezno_znat/08.05.2020/harkovskiy_nyurnberg_pervyy_sud_nad_natsistskimi_prestupnikami/>Харьковский Нюрнберг. Первый суд над нацистскими преступниками</a></td>
+      <td>society</td>
+      <td>not_news</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://www.yuga.ru/news/450418/?utm_source=telegram&utm_medium=news>В Сочи на доме нарисовали граффити с портретами героинь повести «А зори здесь тихие»</a></td>
+      <td>society</td>
+      <td>entertainment</td>
+    </tr>
+    
+  </tbody>
+</table>
+</details>
+
+<br/>
+
+<h1>Threads</h1>
+<div>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Category</th>
+      <th scope="col">Precision</th>
+      <th scope="col">Recall</th>
+      <th scope="col">F-1 score</th>
+      <th scope="col">Support</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <th scope="row">0</th>
+      <td>0.855</td>
+      <td>0.892</td>
+      <td>0.873</td>
+      <td>1571</td>
+    </tr>
+    
+    <tr>
+      <th scope="row">1</th>
+      <td>0.84</td>
+      <td>0.79</td>
+      <td>0.814</td>
+      <td>1130</td>
+    </tr>
+    
+    <tr>
+      <th scope="row"> Macro avg </th>
+      <td>0.848</td>
+      <td>0.841</td>
+      <td>0.844</td>
+      <td>2701</td>
+    </tr>
+    <tr>
+      <th scope="row"> Accuracy </th>
+      <td></td>
+      <td></td>
+      <td>0.849</td>
+      <td>2701</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+<details>
+<summary>Errors</summary>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">First title</th>
+      <th scope="col">Second title</th>
+      <th scope="col">Prediction</th>
+      <th scope="col">Gold</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td><a href=https://www.zakon.kz/5022841-kadyrov-potreboval-uvolit.html>Кадыров потребовал уволить пожаловавшихся на нехватку средств защиты врачей</a></td>
+      <td><a href=https://lenta.ru/news/2020/05/17/sorry/>Пожаловавшиеся на нехватку средств защиты чеченские медики извинились</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://russian.rt.com/sport/news/747359-yagudin-otvet-napadki?utm_source=rss&utm_medium=rss&utm_campaign=RSS>Ягудин об обвинениях в свой адрес: любую ахинею СМИ подхватывают</a></td>
+      <td><a href=https://slovodel.com/560408-yagudin-otreagiroval-na-obvineniya-v-pyanom-izbienii-zhurnalistov>Ягудин отреагировал на обвинения в "пьяном" избиении журналистов</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://tvrain.ru/news/v_dagestane_covid_19_i_vnebolnichnoj_pnevmoniej_zaboleli_13_tysjach_chelovek_ot_pnevmonii_umerli_657_chelovek-508913/?utm_source=telegram&utm_medium=social&utm_campaign=news&utm_term=508913>В Дагестане COVID-19 и внебольничной пневмонией заболели 13 тысяч человек, от пневмонии умерли 657 человек</a></td>
+      <td><a href=https://www.kasparov.ru/material.php?id=5EC0F007DF090>В Дагестане от коронавируса умерли более 40 врачей</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://politros.com/166457-inosmi-rasskazali-kak-popytki-ssha-spasti-dollar-privedut-k-povtoreniyu-velikoi-depressii?utm_referrer=https%3A%2F%2Fzen.yandex.com>ИноСМИ рассказали, как попытки США спасти доллар приведут к повторению Великой депрессии</a></td>
+      <td><a href=https://hotgeo.ru/politika/66510>Haval F7x - несбывшаяся надежда Поднебесной по сравнению с Geely FY11</a></td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://www.capital.ua/ru/news/141534-evrovidenie-2021-proydet-v-rotterdame>«Евровидение – 2021» пройдет в Роттердаме</a></td>
+      <td><a href=https://www.business-gazeta.ru/news/468725>«Евровидение» пройдет в 2021 году в Роттердаме</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://www.m24.ru/news/obshchestvo/17052020/118125>Вузы трудоустроили более 15 тыс студентов по программе Минобрнауки РФ</a></td>
+      <td><a href=https://www.mk.ru/social/2020/05/17/v-rossii-77-vuzov-sokhranili-zashhitu-diplomov-i-gosekzameny.html>В России 77% вузов сохранили защиту дипломов и госэкзамены</a></td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://volg.mk.ru/social/2020/05/17/v-volgograde-snosyat-konyushni-sosnovogo-bora.html>В Волгограде сносят конюшни «Соснового бора»</a></td>
+      <td><a href=https://newstracker.ru/news/society/17-05-2020/nedostroennyy-kolizey-v-minvodah-mozhet-predstavlyat-opasnost>Недостроенный «колизей» в Минводах может представлять опасность</a></td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://www.rbc.ru/rbcfreenews/5ec169fb9a79470e4d698ae6>В Подмосковье на территории промзоны загорелись бензовозы</a></td>
+      <td><a href=https://mosregtoday.ru/sec/dva-benzovoza-zagorelis-v-dzerzhinskom/>Два бензовоза загорелись в Дзержинском</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://runews24.ru/society/17/05/2020/71eb28sccd194cec39e7e5f6088a6db6>В России второй день подряд фиксируют менее 10 тыс. новых инфицированных</a></td>
+      <td><a href=https://www.innov.ru/news/other/dinamika-zarazheniya-koro-1705/>Динамика заражения коронавирусом в России и в мире 17 мая</a></td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://www.rbc.ru/rbcfreenews/5ec169fb9a79470e4d698ae6>В Подмосковье на территории промзоны загорелись бензовозы</a></td>
+      <td><a href=https://www.mk.ru/incident/2020/05/17/smi-v-promzone-v-podmoskove-gorit-benzovoz.html>СМИ: в промзоне в Подмосковье горит бензовоз</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=http://www.trud.ru/article/17-05-2020/1389890_v_rossii_ostanovili_rost_rasprostranenija_koronavirusa.html>В России остановили рост распространения коронавируса</a></td>
+      <td><a href=https://www.pnp.ru/social/v-rospotrebnadzore-ocenili-vozmozhnost-kurortnogo-sezona-v-rossii.html>В Роспотребнадзоре оценили возможность курортного сезона в России</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://www.facenews.ua/news/2020/480571/>Посол Китая в Израиле найден мертвым</a></td>
+      <td><a href=https://riafan.ru/1277237-posla-kitaya-v-izraile-nashli-mertvym-v-posteli>Посла Китая в Израиле нашли мертвым в постели</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://runews24.ru/society/17/05/2020/71eb28sccd194cec39e7e5f6088a6db6>В России второй день подряд фиксируют менее 10 тыс. новых инфицированных</a></td>
+      <td><a href=https://versia.ru/v-rossii-za-poslednie-sutki-vyyavleno-9709-novyx-sluchaev-zarazheniya-koronavirusom>В России за последние сутки выявлено 9709 новых случаев заражения коронавирусом</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://porebrik.d3.ru/na-russkoi-zemle-1980827/>«На русской земле»</a></td>
+      <td><a href=https://vologda.mk.ru/social/2020/05/17/raboty-vologodskogo-khudozhnika-voshli-v-pervuyu-vserossiyskuyu-onlaynvystavku.html>Работы вологодского художника вошли в первую всероссийскую онлайн-выставку</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://ura.news/news/1052432110>ТАСС: в Кремле не определились с датой голосования по Конституции</a></td>
+      <td><a href=http://dynamomania.com/news/529740-anglijskie-kluby-zainteresovany-v-podpisanii-vratarya-trabzonspora>Английские клубы заинтересованы в подписании вратаря "Трабзонспора"</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://anonsens.ru/37536_v_set_slili_dannye_o_gryadushhih_novinkah_xiaomi_i_redmi_nuramura1979>В сеть слили данные о грядущих новинках Xiaomi и Redmi</a></td>
+      <td><a href=https://ilenta.com/news/misc/misc_28773.html>Перечислены ближайшие новинки компании Xiaomi</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://charter97.org/ru/news/2020/5/17/376783/>«Днем приезжают медики, проверяют состояние пациентов, а ночью их увозят»</a></td>
+      <td><a href=https://charter97.org/ru/news/2020/5/17/376795/>Видеофакт: В Минске врачи ездят к пациентам с Covid-19 на маршрутных такси «Полоцкий экспресс»</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://www.m24.ru/news/za-rubezhom/17052020/118093>10 пожарных тяжело пострадали при тушении пожара в Лос-Анджелесе</a></td>
+      <td><a href=https://iz.ru/1012128/2020-05-17/vzryv-progremel-v-tcentre-los-andzhelesa>Взрыв прогремел в центре Лос-Анджелеса</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://www.onlinetambov.ru/news/society/vserossiyskiy-studencheskiy-vypusknoy-v-etom-godu-sostoitsya-onlayn/>Всероссийский студенческий выпускной в этом году состоится онлайн</a></td>
+      <td><a href=https://www.nakanune.ru/news/2020/05/17/22573697/>В некоторых регионов в вузах могут пройти традиционные экзамены</a></td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://apostrophe.ua/article/lime/goroskop/2020-05-17/3-znaka-zodiaka-kotoryim-voskresene-otkryivaet-bolshie-vozmojnosti/32825>3 знака зодиака, которым воскресенье открывает большие возможности</a></td>
+      <td><a href=https://primpress.ru/article/54469>Гороскоп на 17 мая: сегодня Девы будут стремиться к наилучшим результатам</a></td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://www.capital.ua/ru/news/141534-evrovidenie-2021-proydet-v-rotterdame>«Евровидение – 2021» пройдет в Роттердаме</a></td>
+      <td><a href=http://rodgor-vlg.ru/stalo-izvestno-gde-proidet-evrovidenie-2021.html>Стало известно, где пройдет «Евровидение-2021»</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://www.mk.ru/social/2020/05/17/aksenov-nazval-sroki-otkrytiya-sanatoriev-i-gostinic-dlya-krymchan.html>Аксенов назвал сроки открытия санаториев и гостиниц для крымчан</a></td>
+      <td><a href=https://news.ru/regions/v-krymu-rasskazali-o-podgotovke-k-otkrytiyu-turisticheskogo-sezona/>В Крыму рассказали о подготовке к открытию туристического сезона</a></td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://news.sportbox.ru/Vidy_sporta/Futbol/Russia/premier_league/spbnews_NI1190266_Bolelshhiki_Lokomotiva_pohoronili_Kiknadze_i_Meshherakova_u_cherkizovskih_kass>Болельщики «Локомотива» «похоронили» Кикнадзе и Мещерякова у черкизовских касс</a></td>
+      <td><a href=https://news.sportbox.ru/Vidy_sporta/Futbol/Russia/premier_league/spbnews_NI1190126_Fanaty_Lokomotiva_narisovali_graffiti_v_podderzhku_Semina_vozle_domashnej_areny_kluba>Фанаты «Локомотива» нарисовали граффити в поддержку Семина возле домашней арены клуба</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://mig.com.ua/v-zaporozhe-pochtili-pamjat-zhertv-politicheskih-repressij/>В Запорожье почтили память жертв политических репрессий</a></td>
+      <td><a href=https://vchaspik.ua/ukraina/477749-pamyatnaya-data-v-ukraine-otmechaetsya-den-pamyati-zhertv-politicheskih-repressiy>Памятная дата: в Украине отмечается День памяти жертв политических репрессий</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://mig.com.ua/v-zaporozhe-pochtili-pamjat-zhertv-politicheskih-repressij/>В Запорожье почтили память жертв политических репрессий</a></td>
+      <td><a href=https://atn.ua/obshchestvo/v-ukraine-otmechayut-den-pamyati-zhertv-politicheskih-repressiy>В Украине отмечают День памяти жертв политических репрессий</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://grodnonews.by/news/zdorove-i-krasota/okolo_100_patsientov_s_covid_19_poluchili_donorskuyu_plazmu.html>Около 100 пациентов с COVID-19 получили донорскую плазму</a></td>
+      <td><a href=https://news.tut.by/society/684878.html>«Пожалуйста, не надо этого делать». Медики просят родственников не завлекать доноров плазмы деньгами</a></td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    
+    <tr>
+      <td><a href=http://www.yugopolis.ru/news/vliyatel-nyj-policejskij-skonchalsya-ot-koronavirusa-v-krasnodarskoj-bol-nice-126912>Влиятельный полицейский скончался от коронавируса в краснодарской больнице</a></td>
+      <td><a href=https://www.dg-yug.ru/news/110580.html>На Кубани скончался еще один больной коронавирусом</a></td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://for-ua.com/article/1198814>На Киевщине в результате ДТП погибли три человека</a></td>
+      <td><a href=https://nation-news.ru/523485-odin-rebenok-vyzhil-v-massovom-dtp-v-kurganskoi-oblasti>Один ребенок выжил в массовом ДТП в Курганской области</a></td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://primpress.ru/article/54480>В России за сутки выявлено менее десяти тысяч случаев заражения коронавирусом</a></td>
+      <td><a href=https://tjournal.ru/news/169925-chislo-zabolevshih-covid-19-v-rossii-prevysilo-281-tysyachu-za-sutki-zafiksirovali-9709-sluchaev>Число заболевших Covid-19 в России превысило 281 тысячу. За сутки зафиксировали 9709 случаев</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://ua.news/ru/chyslo-bolnyh-covid-19-v-ukrayne-prevysylo-18-tysyach/>Число больных COVID-19 в Украине превысило 18 тысяч</a></td>
+      <td><a href=https://www.dsnews.ua/society/v-ukraine-podtverdili-433-novyh-sluchaya-covid-19-21-chelovek-umerli--17052020091400>В Украине подтвердили 433 новых случая COVID-19, 21 человек умер, 210 пациентов выздоровели</a></td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://russian.rt.com/sport/news/747415-abdelaziz-nurmagomedov-zavershenie-karery>Менеджер Нурмагомедова: Хабиб после каждого боя говорит, что завершает карьеру</a></td>
+      <td><a href=https://www.vesti.ru/doc.html?id=3265762>ММА. Джастин Гэтжи грозится побить и Нурмагомедова, и Макгрегора</a></td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://lenta.ru/news/2020/05/17/troika/>Трое россиян вошли в двадцатку богатейших жителей Великобритании</a></td>
+      <td><a href=https://tvzvezda.ru/news/vstrane_i_mire/content/2020517938-KZsNe.html>В двадцатку богатейших жителей Великобритании вошли трое россиян</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://argumentiru.com/2020/05/ta-512596>Ученые обнаружили связь между повышением уровня моря и деятельностью человека</a></td>
+      <td><a href=https://actualnews.org/exclusive/346159-uchenye-predskazali-globalnuju-katastrofu-v-gimalajah.html>Ученые предсказали глобальную катастрофу в Гималаях</a></td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://riafan.ru/1277274-popova-rasskazala-kak-izbezhat-uzhestocheniya-ogranichitelnykh-mer-v-rossii>Попова рассказала, как избежать ужесточения ограничительных мер в России</a></td>
+      <td><a href=https://polit.info/495719-popova-nazvala-optimalnoe-kolichestvo-novyh-sluchaev-covid-19-v-rf>Попова назвала оптимальное количество новых случаев COVID-19 в РФ</a></td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://www.innov.ru/news/mosaic/frantsuzskiy-akter-vensan/>Французский актер Венсан Кассель о супергеройских фильмах: «Я бы не стал такое смотреть»</a></td>
+      <td><a href=https://pluggedin.ru/open/babu-frik-mog-vyglyadety-ghutko-v-zvezdnyh-voynah:-skayuoker-voshod-24162>Бабу Фрик мог выглядеть жутко в «Звездных войнах: Скайуокер. Восход»</a></td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    
+    <tr>
+      <td><a href=http://tvoygorodpskov.ru/2020/05/892886-v-germanii-za-sutki-viyavili-583-sluchaya-zabolevaniya.html>В Германии за сутки выявили 583 случая заболевания коронавирусом</a></td>
+      <td><a href=http://kontrakty.ua/article/156080>Немецкий вирусолог считает массовую вакцинацию против COVID-19 ненужной</a></td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://meduza.io/shapito/2020/05/17/yandeks-pereputal-telefon-administratsii-konakovo-s-mobilnym-byvshego-glavy-tveri>«Яндекс» перепутал телефон администрации Конаково с мобильным бывшего главы Твери</a></td>
+      <td><a href=https://news.rambler.ru/community/44193595-eks-glava-tveri-v-shutku-razdaval-propuska-lyudyam/>Экс-глава российского города в шутку «раздавал пропуска»</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://piter.tv/event/Anomalno_holodno_maj_v_Peterburge_bet_vse_rekordi/>Аномально холодный май в Петербурге бьет все рекорды</a></td>
+      <td><a href=https://moika78.ru/news/2020-05-17/416389-maj-2020-v-peterburge-budet-odnim-iz-samyh-holodnyh-v-xxi-veke/>Май-2020 в Петербурге будет одним из самых холодных в XXI веке</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://www.mvestnik.ru/newslent/vse-rossijskie-vuzy-namereny-provodit-ekzameny-v-2020-godu-v-distancionnom-formate/>Все российские вузы намерены проводить экзамены в 2020 году в дистанционном формате</a></td>
+      <td><a href=https://ura.news/news/1052432088>Глава Минобрнауки РФ пояснил, как пройдет всероссийский выпускной</a></td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://rueconomics.ru/442492-dalnevostochnaya-kompaniya-priobretet-60-samoletov-ssj-100-i-mc-21>Дальневосточная компания приобретет 60 самолетов SSJ-100 и MC-21</a></td>
+      <td><a href=https://lenta.ru/news/2020/05/17/ssj100/>Российскому Sukhoi SuperJet 100 предрекли успех после пандемии коронавируса</a></td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://www.zakon.kz/5022841-kadyrov-potreboval-uvolit.html>Кадыров потребовал уволить пожаловавшихся на нехватку средств защиты врачей</a></td>
+      <td><a href=https://www.kommersant.ru/doc/4347866>Кадыров потребовал уволить медиков, заявивших о нехватке масок</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://ubr.ua/ukraine-and-world/society/s-nachala-hoda-luk-v-ukraine-podorozhal-bolee-chem-vdvoe-3892836>Названы товары, стоимость которых больше всего изменилась с начала года</a></td>
+      <td><a href=https://ua.news/ru/v-mynekonomyky-podschytaly-kak-yzmenylys-tseny-na-produkty/>В Минэкономики подсчитали, как изменились цены на продукты</a></td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://russian.rt.com/world/article/747428-tranzit-gaz-polsha-gazprom-kontrakt?utm_source=rss&utm_medium=rss&utm_campaign=RSS>«Проблем не создало»: почему Варшава и Москва не стали перезаключать контракт на транзит газа</a></td>
+      <td><a href=https://polit.info/495677-dogovor-rossii-i-polshi-o-tranzite-gaza-v-evropu-perestal-deistvovat-17-maya>Договор России и Польши о транзите газа в Европу перестал действовать 17 мая</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://charter97.org/ru/news/2020/5/17/376757/>Омерзительная «восьмерка»: как COVID-19 поразил оккупированный Крым</a></td>
+      <td><a href=https://ru.krymr.com/a/kak-v-sevastopole-lechat-ot-koronavirusa/30616847.html>«Температура 40 – это совершенно нормально». Как в Севастополе лечат от коронавируса</a></td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://polit.info/495743-mikrobiolog-opredelil-gruppu-lyudei-kotoraya-pervoi-proidet-vakcinaciyu-ot-covid-19>Микробиолог определил группу людей, которая первой пройдет вакцинацию от COVID-19</a></td>
+      <td><a href=https://tass.ru/obschestvo/8493407>Эксперт: наличие антител к коронавирусу определит, нужна ли человеку вакцина</a></td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://66.ru/health/news/230796/>Заболеваемость коронавирусом в Екатеринбурге выросла вдвое</a></td>
+      <td><a href=https://newdaynews.ru/ekaterinburg/692152.html>Снова рост: на Среднем Урале 160 новых случаев коронавируса</a></td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://polit.info/495746-komik-sergei-pisarenko-zayavil-chto-rossiyane-i-ukraincy-eshche-budut-zhat-drug-drugu-ruki>Комик Сергей Писаренко заявил, что россияне и украинцы еще будут жать друг другу руки</a></td>
+      <td><a href=https://tsargrad.tv/news/v-kieve-rossijskogo-kapitana-komandy-kvn-pytalis-slomat-voprosom-chej-krym-ne-poluchilos_254296>В Киеве российского капитана команды КВН пытались сломать вопросом "Чей Крым?". Не получилось</a></td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://newinform.com/225774-policiya-shtata-illinois-byla-vtyanuta-v-perestrelku-so-zloumyshlennikom>Полиция штата Иллинойс была втянута в перестрелку со злоумышленником</a></td>
+      <td><a href=https://www.vesti.ru/doc.html?id=3265826>В США расстреляли участников поминальной службы</a></td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://donpress.com/news/17-05-2020-ukrainu-prinyali-v-sostav-komiteta-po-zdravoohraneniyu-evrosoyuza-stepanov>Украину приняли в состав комитета по здравоохранению Евросоюза — Степанов</a></td>
+      <td><a href=https://donpress.com/news/17-05-2020-ukrainu-prinyali-v-sostav-komiteta-po-zdravoohraneniyu-evrosoyuza-stepanovs>Украину приняли в состав комитета по здравоохранению Евросоюза — СтепановС</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://mir24.tv/news/16410270/putin-soobshchil-chto-dorozhit-tovarishcheskimi-otnosheniyami-s-tokaevym>Путин сообщил, что дорожит товарищескими отношениями с Токаевым</a></td>
+      <td><a href=https://sputnik.by/politics/20200517/1044698776/Lukashenko-pozdravil-Tokaeva-s-dnem-rozhdeniya.html>Лукашенко поздравил Токаева с днем рождения</a></td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://www.sports.ru/hockey/1085588492.html>НХЛ добилась прогресса в вопросе участия 24 команд в плей-офф</a></td>
+      <td><a href=https://euro.com.ua/hockey/2020/05/18/nhl-mojet-provesti-plei-off-v-formate-24-h-komand/>НХЛ может провести плей-офф в формате 24-х команд</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://3dnews.ru/1011133>Мертворождённый электромобиль Dyson может стать донором технологий</a></td>
+      <td><a href=http://tvoygorodpskov.ru/2020/05/892899-dzheyms-dayson-povedal-kak-potratil-polmilliarda-funtov-na.html>Джеймс Дайсон поведал, как потратил полмиллиарда фунтов на электрокар</a></td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://gubernia74.ru/articles/news/1097547/>В Челябинске усилен контроль за соблюдением режима самоизоляции</a></td>
+      <td><a href=https://www.business-class.su/news/2020/05/17/policeiskie-napomnili-o-neobhodimosti-soblyudeniya-ogranichitelnyh-mer>​Полицейские напомнили о необходимости соблюдения ограничительных мер</a></td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://www.oreanda.ru/v_mire/on-nekompetenten-tramp-dal-otvet-obame-na-kritiku-borbu-s-koronavirusom/article1317883/>"Он некомпетентен". Трамп дал ответ Обаме на критику борьбы с коронавирусом</a></td>
+      <td><a href=https://riafan.ru/1277354-tramp-nazval-obamu-nekompetentnym>Трамп назвал Обаму «некомпетентным»</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://tsargrad.tv/news/novaja-strategija-zelenskogo-v-rade-nazvali-glavnuju-zadachu-kieva-na-donbasse_254215>Новая стратегия Зеленского? В Раде назвали главную задачу Киева в Донбассе</a></td>
+      <td><a href=https://www.rosbalt.ru/world/2020/05/17/1843743.html>Стало известно о смене стратегии Зеленского по Донбассу</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://vedtver.ru/news/proisshestviya/u-zhitelya-zubtsova-politseyskie-nashli-tseluyu-korobku-konopli/>У жителя Зубцова полицейские нашли целую коробку конопли</a></td>
+      <td><a href=https://www.gorno-altaisk.info/news/115084>Покупателя «синтетики» задержали прямо у «закладки»</a></td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    
+    <tr>
+      <td><a href=http://primorye24.ru/news/post/129901-primorec-zarezal-pyanogo-priyatelya>Приморец зарезал пьяного приятеля</a></td>
+      <td><a href=https://ast.mk.ru/incident/2020/05/17/v-astrakhanskoy-oblasti-muzhchina-zadnim-khodom-pereekhal-znakomogo.html>В Астраханской области мужчина задним ходом переехал знакомого</a></td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://moika78.ru/news/2020-05-17/416329-v-peterburge-umerli-eshhe-pyat-patsientov-s-koronavirusom/>В Петербурге умерли еще пять пациентов с коронавирусом</a></td>
+      <td><a href=https://www.molnet.ru/mos/ru/health_and_social/o_744260>В Москве умер еще 71 пациент с коронавирусной инфекцией</a></td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://ura.news/news/1052432086>Друг Аллегровой показал фото певицы без парика и макияжа</a></td>
+      <td><a href=https://from-ua.com/news/548714-meiher-pokazala-za-chto-ee-vzyali-v-via-gru-foto.html>Мейхер показала, за что ее взяли в "ВИА Гру". ФОТО</a></td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://tvrain.ru/news/v_dagestane_covid_19_i_vnebolnichnoj_pnevmoniej_zaboleli_13_tysjach_chelovek_ot_pnevmonii_umerli_657_chelovek-508913/?utm_source=telegram&utm_medium=social&utm_campaign=news&utm_term=508913>В Дагестане COVID-19 и внебольничной пневмонией заболели 13 тысяч человек, от пневмонии умерли 657 человек</a></td>
+      <td><a href=https://ru.krymr.com/a/news-koronavirus-dagestan/30617079.html>Россия: в Дагестане от «внебольничной пневмонии» скончались почти 700 человек</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=http://trassae95.com/all/photo/2020/05/17/2-pacienta-s-koronavirusom-skonchalisj-v-odesse-za-poslednie-sutki-57310.html>2 пациента с коронавирусом скончались в Одессе за последние сутки</a></td>
+      <td><a href=http://trassae95.com/all/news/2020/05/17/2-pacienta-s-koronavirusom-skonchalisj-v-odesse-za-poslednie-sutki-obnovleno-57310.html>2 пациента с коронавирусом скончались в Одессе за последние сутки. Обновлено</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://vladimir.mk.ru/social/2020/05/17/za-sutki-vo-vladimirskoy-oblasti-podtverzhden-81-novyy-sluchay-covid19.html>За сутки во Владимирской области подтвержден 81 новый случай COVID-19</a></td>
+      <td><a href=http://trc33.ru/news/society/vo-vladimirskoy-oblasti-uzhe-1738-zarazhennykh-koronavirusom/>Во Владимирской области уже 1738 зараженных коронавирусом</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://www.business-class.su/news/2020/05/18/v-prikame-medikam-za-rabotu-s-covid-pacientami-pereschitayut-vyplaty>В Прикамье медикам из-за технической ошибки пересчитают выплаты за работу с COVID-пациентами</a></td>
+      <td><a href=https://www.dg-yug.ru/news/110582.html>На Кубани после перерасчета доплаты получат 8,3 тыс. медиков</a></td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://sputnik.by/lifestyle/20200517/1044700044/Pevitsa-Natasha-Koroleva-soobschila-khoroshie-novosti-o-zdorove-Zavorotnyuk.html>Певица Наташа Королева сообщила хорошие новости о здоровье Заворотнюк</a></td>
+      <td><a href=https://tsargrad.tv/news/novosti-horoshie-i-nastja-idjot-na-popravku-natasha-koroljova-okazalas-sosedkoj-zavorotnjuk_254269>"Новости хорошие, Настя идёт на поправку": Наташа Королёва оказалась соседкой Заворотнюк</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://www.obozrevatel.com/lady/diet/vyiyasnilos-pri-kakih-boleznyah-poyavlyaetsya-lishnij-ves.htm>Выяснилось, при каких болезнях появляется лишний вес</a></td>
+      <td><a href=https://www.rosbalt.ru/world/2020/05/17/1843750.html>Ученые узнали, какие витамины опасны для больных людей</a></td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://tass.ru/obschestvo/8494913>В Коми подготовили пункты размещения для оказавшихся в зоне паводка</a></td>
+      <td><a href=https://www.bnkomi.ru/data/news/111808>Владимир Уйба побывал в сыктывкарских поселках, находящихся в зоне половодья</a></td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://racurs.ua/n138325-nemeckiy-futbolnyy-klub-reshil-problemu-otsutstviya-zriteley-plushevymi-medvedyami-foto.html>Немецкий футбольный клуб решил проблему отсутствия зрителей плюшевыми медведями (ФОТО)</a></td>
+      <td><a href=https://sport.ua/news/488078-foto-v-bundeslige-dayut-intervyu-na-ogromnom-rasstoyanii>ФОТО. В Бундеслиге дают интервью на огромном расстоянии</a></td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://news.ru/world/dzhabarov-ocenil-novuyu-strategiyu-kieva-po-donbassu/>Сенатор Джабаров оценил новую стратегию Киева по Донбассу</a></td>
+      <td><a href=https://rusvesna.su/news/1589653619>«План Путина отобрать Одессу и ещё три важных региона Украины»: в Киеве истерика</a></td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    
+    <tr>
+      <td><a href=http://allsport-news.net/364965_u_salaha_byilo_predlojenie_ot_reala_v_2018_m__eks_trener_sbornoy_egipta_o_forvarde_liverpulya.html>У Салаха было предложение от Реала в 2018-м. Экс-тренер сборной Египта о форварде Ливерпуля</a></td>
+      <td><a href=http://allsport-news.net/364993_salah_otkazal_realu_v_2018_godu.html>Салах отказал Реалу в 2018 году</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://lenta.ru/news/2020/05/17/statya/>Bloomberg снова изменил заголовок статьи об умерших россиянах с коронавирусом</a></td>
+      <td><a href=https://rueconomics.ru/442439-pushkov-nazval-material-bloomberg-vrazhdebnym-i-rasistskim-po-otnosheniyu-k-rf>Пушков назвал материал Bloomberg враждебным и расистским по отношению к РФ</a></td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://vostokmedia.com/news/society/17-05-2020/bolee-70-za-sutki-ozvucheny-svezhie-dannye-po-koronavirusu-v-primorie?utm_source=vk.com&utm_medium=social&utm_campaign=communities_1mi>Более 70 за сутки: озвучены свежие данные по коронавирусу в Приморье</a></td>
+      <td><a href=https://www.mk.ru/social/2020/05/17/chislo-zarazivshikhsya-koronavirusom-v-primore-dostiglo-1268-chelovek.html>Число заразившихся коронавирусом в Приморье достигло 1268 человек</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://vnnews.ru/social/84580-andrej-nikitin-rasskazal-o-federalnykh-i-regionalnykh-vyplatakh-medikam-rabotayushchim-v-usloviyakh-pandemii-koronavirusa.html>Андрей Никитин рассказал о федеральных и региональных выплатах медикам, работающим в условиях пандемии коронавируса</a></td>
+      <td><a href=https://vnnews.ru/actualno/84580-andrej-nikitin-rasskazal-o-federalnykh-i-regionalnykh-vyplatakh-medikam-rabotayushchim-v-usloviyakh-pandemii-koronavirusa.html>Андрей Никитин рассказал о федеральных и региональных выплатах медикам, работающим в условиях пандемии коронавируса</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://gorobzor.ru/novosti/obschestvo/42571-v-bashkirii-rekordno-vyroslo-chislo-zarazhennyh-koronavirusom>В Башкирии сильно выросло число зараженных коронавирусом</a></td>
+      <td><a href=http://ufacitynews.ru/news/2020/05/17/nazvany-bolnicy-bashkirii-s-naibolshim-kolichestvom-pacientov-s-koronavirusom/>Названы больницы Башкирии с наибольшим количеством пациентов с коронавирусом</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://lenta.ru/news/2020/05/17/statya/>Bloomberg снова изменил заголовок статьи об умерших россиянах с коронавирусом</a></td>
+      <td><a href=https://www.nakanune.ru/news/2020/05/17/22573686/>Bloomberg переименовал статью о коронавирусе в России после скандала</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://tass.ru/obschestvo/8492413>Власти Китая за сутки выявили пять новых случаев заражения коронавирусом</a></td>
+      <td><a href=https://russian.rt.com/world/news/747296-koronavirus-knr-novye>За сутки в КНР выявили пять новых случаев коронавируса</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://tvoe-avto.com/214919-avtomobili-skoda-vnov-podesheveli-na-300-000-rublej.html>Автомобили Skoda вновь подешевели на 300 000 рублей</a></td>
+      <td><a href=https://lezgigazet.ru/archives/159465>Автомобили Skoda снова подешевели на 300 000 рублей</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://www.pravda.ru/news/economics/1498927-odezhda/>За май продажи одежды в интернете выросли в 4,5 раза</a></td>
+      <td><a href=https://www.bfm.ru/news/443911>В мае аналитики Ozon зафиксировали рост онлайн-продаж одежды в 4,5 раза</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://sputnik.by/politics/20200517/1044698776/Lukashenko-pozdravil-Tokaeva-s-dnem-rozhdeniya.html>Лукашенко поздравил Токаева с днем рождения</a></td>
+      <td><a href=https://www.zakon.kz/5022815-lukashenko-pozdravil-tokaeva-s-dnem.html>Лукашенко поздравил Токаева с днем рождения</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://shazoo.ru/2020/05/17/94422/ubisoft-podala-v-sud-na-apple-i-google-iz-za-area-f2-mobilnogo-klona-rainbow-six-siege>Ubisoft подала в суд на Apple и Google из-за Area F2 — мобильного "клона" Rainbow Six Siege</a></td>
+      <td><a href=https://www.gametech.ru/news/70142/>Ubisoft подала в суд на Apple и Google</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=http://allsport-news.net/364965_u_salaha_byilo_predlojenie_ot_reala_v_2018_m__eks_trener_sbornoy_egipta_o_forvarde_liverpulya.html>У Салаха было предложение от Реала в 2018-м. Экс-тренер сборной Египта о форварде Ливерпуля</a></td>
+      <td><a href=http://fapl.ru/posts/78500/>Салах отказал "Реалу" в 2018 году</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://yk.kz/news/show/56394>Полиглот, дипломат и президент</a></td>
+      <td><a href=https://www.nur.kz/1856108-kasym-zomartu-tokaevu-ispolnilos-67-let.html>Касым-Жомарту Токаеву исполнилось 67 лет</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://lenta.ru/news/2020/05/17/statya/>Bloomberg снова изменил заголовок статьи об умерших россиянах с коронавирусом</a></td>
+      <td><a href=https://politexpert.net/196920-bloomberg-pomenyal-zagolovok-stati-o-smertnosti-posle-kritiki-zaharovoi>Bloomberg поменял заголовок статьи о смертности после критики Захаровой</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://lenta.ru/news/2020/05/17/statya/>Bloomberg снова изменил заголовок статьи об умерших россиянах с коронавирусом</a></td>
+      <td><a href=https://slovodel.com/560369-bloomberg-posle-kritiki-zaharovoi-smenil-zagolovok-stati-o-situacii-s-koronavirusom-v-rf>Bloomberg после критики Захаровой сменил заголовок статьи о ситуации с коронавирусом в РФ</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://zamana.info/rubriki/news/obshestvo/94-obshestvo/11350-italiya-otmenit-karantin-dlya-grazhdan-es>Италия отменит карантин для граждан ЕС</a></td>
+      <td><a href=https://www.kommersant.ru/doc/4347610>Италия разрешает свободное перемещение со странами ЕС с 3 июня</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://lenta.ru/news/2020/05/17/statya/>Bloomberg снова изменил заголовок статьи об умерших россиянах с коронавирусом</a></td>
+      <td><a href=https://utro.ru/politics/2020/05/17/1445428.shtml>В США из-за скандала дважды поменяли заголовок статьи о смертности в России</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://lenta.ru/news/2020/05/17/statya/>Bloomberg снова изменил заголовок статьи об умерших россиянах с коронавирусом</a></td>
+      <td><a href=https://politros.com/166432-bloomberg-vo-vtoroi-raz-smenil-zagolovok-stati-posle-zamechanii-zaharovoi>Bloomberg во второй раз сменил заголовок статьи после замечаний Захаровой</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://tass.ru/obschestvo/8492629>В Москве число выздоровевших после коронавируса превысило 27 тыс.</a></td>
+      <td><a href=https://russian.rt.com/russia/news/747320-moskva-chislo-vyzdorovevshih-koronavirus>Число выздоровевших после коронавируса в Москве превысило 27 тысяч</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://politros.com/166474-putin-nazval-rossiyu-otdelnoi-civilizaciei>Путин назвал Россию отдельной цивилизацией</a></td>
+      <td><a href=https://russian.rt.com/science/news/747377-putin-nauka-rossiya>Путин отметил важность высоких технологий для российской цивилизации</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://magadanmedia.ru/news/946096/>Коронавирус в Магадане: 3 новых случая COVID-19, 106 человек вылечились</a></td>
+      <td><a href=https://onlinevologda.ru/news/society/in-cherepovets-six-people-became-ill-with-the-coronavirus/>В Череповце шесть человек заболели коронавирусом</a></td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://www.livekuban.ru/news/obshchestvo/na-kubani-koronavirus-podozrevayut-pochti-u-2500-chelovek/>На Кубани коронавирус подозревают почти у 2500 человек</a></td>
+      <td><a href=https://www.dg-yug.ru/news/110578.html>Стали известны подробности о новых случаях коронавируса на Кубани</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://newstracker.ru/news/society/17-05-2020/koronavirusom-za-sutki-zarazilis-98-zhiteley-stavropolya>Коронавирусом за сутки заразились 98 жителей Ставрополья</a></td>
+      <td><a href=https://stavropolye.tv/news/133968>На Ставрополье выявлено 98 новых случаев заражения коронавирусом</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://www.rbc.ru/rbcfreenews/5ec0a74e9a79475a85fb05f4>В Китае выявили пять новых случаев заражения коронавирусом</a></td>
+      <td><a href=https://www.mk.ru/incident/2020/05/17/v-kitae-vyyavleno-pyat-novykh-sluchaev-koronavirusa-v-aktivnoy-forme.html>В Китае выявлено пять новых случаев коронавируса в активной форме</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=http://trassae95.com/all/photo/2020/05/17/poselok-pod-odessoj-reshil-postroitj-skejt-park-za-15-mln-57303.html>Поселок под Одессой решил построить скейт-парк за 1,5 млн</a></td>
+      <td><a href=http://trassae95.com/all/news/2020/05/17/poselok-pod-odessoj-reshil-postroitj-skejt-park-za-15-mln-57303.html>Поселок под Одессой решил построить скейт-парк за 1,5 млн</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://www.infpol.ru/214509-v-buryatii-rastet-chislo-zabolevshikh-koronavirusom-za-sutki-vyyavili-56-novykh-sluchaev/>В Бурятии растет число заболевших коронавирусом. За сутки выявили 56 новых случаев</a></td>
+      <td><a href=https://www.baikal-daily.ru/news/20/390544/>В Бурятии число случаев коронавируса перевалило хорошо за 900</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://sputnik.by/politics/20200517/1044698776/Lukashenko-pozdravil-Tokaeva-s-dnem-rozhdeniya.html>Лукашенко поздравил Токаева с днем рождения</a></td>
+      <td><a href=https://www.nur.kz/1856137-lukasenko-pozdravil-tokaeva-s-dnem-rozdenia.html>Лукашенко поздравил Токаева с днем рождения</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://iz.ru/1012155/2020-05-17/umerla-rezhisser-serialov-utrennee-shou-i-novenkaia-linn-shelton>Умерла режиссер сериалов «Утреннее шоу» и «Новенькая» Линн Шелтон</a></td>
+      <td><a href=http://www.rewizor.ru/news/umerla-rejisser-seriala-utrennee-shou-linn-shelton/>Умерла режиссер сериала "Утреннее шоу" Линн Шелтон</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://iz.ru/1012139/2020-05-17/na-ukraine-zakhoteli-vernut-meditcinu-vremen-sssr>На Украине захотели вернуть медицину времен СССР</a></td>
+      <td><a href=https://www.pravda.ru/news/world/1498919-medicina/>Зеленского попросили вернуть медицину "как в СССР"</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://www.livekuban.ru/news/obshchestvo/na-kubani-koronavirus-podozrevayut-pochti-u-2500-chelovek/>На Кубани коронавирус подозревают почти у 2500 человек</a></td>
+      <td><a href=https://www.vkpress.ru/life/na-kubani-koronavirus-diagnostirovali-eshche-u-95-chelovek/?id=130533>На Кубани коронавирус диагностировали еще у 95 человек</a></td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    
+    <tr>
+      <td><a href=http://trassae95.com/all/news/2020/05/17/goncshiki-vtoruyu-nochj-podryad-snosyat-zabory-u-izmailjskogo-porta-57305.html>Гонщики вторую ночь подряд сносят заборы у Измаильского порта</a></td>
+      <td><a href=http://trassae95.com/all/photo/2020/05/17/goncshiki-vtoruyu-nochj-podryad-snosyat-zabory-u-izmailjskogo-porta-57305.html>Гонщики вторую ночь подряд сносят заборы у Измаильского порта</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://www.euro-football.ru/article/29/1004365759_futbolistyi_cska_proydut_test_na_koronavirus_v_ponedelnik>​Футболисты ЦСКА пройдут тест на коронавирус в понедельник</a></td>
+      <td><a href=https://bombardir.ru/news/604035-Zavtra-igroki-CSKA-soberutsya-na-baze-i-sdadut-test-na-koronavirus%20>Завтра игроки ЦСКА соберутся на базе и сдадут тест на коронавирус</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://www.metronews.ru/novosti/peterbourg/reviews/krupnye-torgovye-centry-v-lenoblasti-v-tom-chisle-megi-na-granice-s-peterburgom-zakryli-1673415/>Крупные торговые центры в Ленобласти, в том числе "МЕГИ" на границе с Петербургом, закрыли</a></td>
+      <td><a href=https://riafan.ru/1277214-torgovye-centry-mega-prorabotali-dva-dnya-fan-tv>Торговые центры «Мега» проработали два дня. ФАН-ТВ</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://iz.ru/1012155/2020-05-17/umerla-rezhisser-serialov-utrennee-shou-i-novenkaia-linn-shelton>Умерла режиссер сериалов «Утреннее шоу» и «Новенькая» Линн Шелтон</a></td>
+      <td><a href=https://www.mk.ru/social/2020/05/17/umerla-amerikanskiy-rezhisser-linn-shelton.html>Умерла американский режиссер Линн Шелтон</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://iz.ru/1012155/2020-05-17/umerla-rezhisser-serialov-utrennee-shou-i-novenkaia-linn-shelton>Умерла режиссер сериалов «Утреннее шоу» и «Новенькая» Линн Шелтон</a></td>
+      <td><a href=https://lenta.ru/news/2020/05/17/shelton/>Умерла режиссер «Утреннего шоу» и «Новенькой»</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://www.znak.com/2020-05-17/v_kurganskoy_oblasti_vyyavleno_vosem_novyh_sluchaev_covid_19>В Курганской области выявлено восемь новых случаев COVID-19</a></td>
+      <td><a href=https://ura.news/news/1052431945>В Курганской области 8 новых заболевших COVID-19. Один из них привез инфекцию из соседнего региона</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://www.dp.ru/a/2020/05/17/V_Peterburge_chislo_novih>В Петербурге число новых случаев COVID-19 снизилось до 451</a></td>
+      <td><a href=https://www.dp.ru/a/2020/05/17/V_Peterburge_zhertvami_kor>В Петербурге жертвами коронавируса признали еще пять человек</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://realnoevremya.ru/news/174897-prokuratura-rt-prosit-tatarstancev-byt-vnimatelnymi-pri-oformlenii-vyplat-na-detey>Прокуратура РТ просит татарстанцев быть внимательными при оформлении выплат на детей</a></td>
+      <td><a href=https://kazan.mk.ru/social/2020/05/17/prokuratura-rt-moshenniki-zapustili-saytyklony-dlya-oformleniya-vyplat-na-detey.html>Прокуратура РТ: мошенники запустили сайты-клоны для оформления выплат на детей</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://tass.ru/obschestvo/8493747>СК начал проверку после жалобы белгородских врачей на невыплаты денежных компенсаций</a></td>
+      <td><a href=https://russian.rt.com/russia/news/747388-belgorodskaya-oblast-vyplaty>СК проверяет жалобу врачей в Белгородской области на отсутствие выплат</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://nord-news.ru/news/2020/05/17/?newsid=121556>Пропавший в январе 65-летний пенсионер найден мертвым в Шонгуе</a></td>
+      <td><a href=https://www.mvestnik.ru/newslent/propavshij-v-yanvare-65-letnij-pensioner-najden-mertvym-v-shongue/>Пропавший в январе 65-летний пенсионер найден мертвым в Шонгуе</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://zamana.info/rubriki/news/economics/98-economics/11349-rosselkhoznadzor-dagestana-zabrakoval-28-5-tonny-zernovykh>Россельхознадзор Дагестана забраковал 28,5 тонны зерновых</a></td>
+      <td><a href=https://lezgigazet.ru/archives/159413>Россельхознадзор РД забраковал 28,5 тонны зерновых</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://novosti-saratova.ru/koronavirus-chislo-zabolevshih-v-saratovskoy-oblasti-perevalilo-za-1-7-tyis-chelovek.html>Коронавирус. Число заболевших в Саратовской области перевалило за 1,7 тыс человек</a></td>
+      <td><a href=https://saratov24.tv/news/plyus-121-obshchee-kolichestvo-zabolevshikh-covid-19-v-saratovskoy-oblasti-1754-cheloveka/>Плюс 121. Общее количество заболевших COVID-19 в Саратовской области - 1754 человека</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://novokuznetsk.ru/2020/05/17/tret-vseh-zarazhyonnyh-koronavirusom-v-kuzbasse-prihoditsya-na-novokuznetsk/>Треть всех заражённых коронавирусом в Кузбассе приходится на Новокузнецк</a></td>
+      <td><a href=https://sibdepo.ru/news/tret-vseh-zarazhyonnyh-koronavirusom-v-kuzbasse-prihoditsya-na-novokuznetsk.html>Треть всех заражённых коронавирусом в Кузбассе приходится на Новокузнецк</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://www.pravda.ru/news/economics/1498927-odezhda/>За май продажи одежды в интернете выросли в 4,5 раза</a></td>
+      <td><a href=https://tass.ru/obschestvo/8493293>Исследование: онлайн-продажи одежды выросли в мае в 4,5 раза</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://novosti-saratova.ru/koronavirus-chislo-zabolevshih-v-saratovskoy-oblasti-perevalilo-za-1-7-tyis-chelovek.html>Коронавирус. Число заболевших в Саратовской области перевалило за 1,7 тыс человек</a></td>
+      <td><a href=https://www.vzsar.ru/news/2020/05/17/esche-121-chislo-zabolevshih-koronavirysom-v-saratovskoy-oblasti-dostiglo-1754.html>Еще 121. Число заболевших коронавирусом в Саратовской области достигло 1754</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://nord-news.ru/news/2020/05/17/?newsid=121559>В Ковдоре женщина во время драки едва не зарезала экс-сожителя</a></td>
+      <td><a href=https://www.mvestnik.ru/newslent/policejskimi-zaderzhana-zhitelnica-kovdorskogo-rajona-nanesshaya-nozhevoe-ranenie-byvshemu-sozhitelyu/>Полицейскими задержана жительница Ковдорского района, нанесшая ножевое ранение бывшему сожителю</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://www.capital.ua/ru/news/141545-v-kharkove-vrachi-skoroy-pomoschi-zavtra-vyydut-na-zabastovku>В Харькове врачи скорой помощи завтра выйдут на забастовку</a></td>
+      <td><a href=https://www.sq.com.ua/rus/news/novosti/17.05.2020/v_harkove_vrachi_skoroy_namereny_obyavit_zabastovku_foto/>В Харькове врачи скорой намерены объявить забастовку (фото)</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=http://www.trud.ru/article/17-05-2020/1389894_v_puerto-riko_projdet_referendum_o_vxozhdenii_v_sostav_ssha.html>В Пуэрто-Рико пройдет референдум о вхождении в состав США</a></td>
+      <td><a href=https://tjournal.ru/news/169930-puerto-riko-provedet-referendum-o-vhozhdenii-v-sostav-ssha>Пуэрто-Рико проведёт референдум о вхождении в состав США</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://vladnews.ru/2020-05-17/171880/moshenniki_ustroili>Мошенники устроили облаву на крупные предприятия Приморья</a></td>
+      <td><a href=http://primorye24.ru/news/post/129765-moshenniki-ustroili-oblavu-na-krupnye-predpriyatiya-primorya>Мошенники устроили облаву на крупные предприятия Приморья</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://ria.ru/20200517/1571569692.html>Умер основатель белорусского новостного портала tut.by Юрий Зиссер</a></td>
+      <td><a href=https://mogilev.online/rus/news/belarus-15003/>Умер Юрий Зиссер</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://sport.ua/news/488071-sobol-peregovory-bryugge-i-shahtera-o-moem-transfere-na-zavershayushchem-etape>СОБОЛЬ: «Переговоры Брюгге и Шахтера о моем трансфере на завершающем этапе»</a></td>
+      <td><a href=https://euro.com.ua/football/2020/05/17/peregovory-po-perehodu-sobolya-nahodyatsya-na-finalnom-etape/>Переговоры по переходу Соболя находятся на финальном этапе</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://superomsk.ru/news/88811-stalo_izvestno_v_kakix_rayonax_omskoy_oblasti_vyav/>Стало известно, в каких районах Омской области выявлены новые случаи коронавируса</a></td>
+      <td><a href=https://omskzdes.ru/health/69681.html>Более 500 омичей заразились коронавирусом</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://gubdaily.ru/news/v-karelii-za-sutki-koronavirus-vyyavili-u-10-chelovek/>В Карелии за сутки коронавирус выявили у 10 человек</a></td>
+      <td><a href=https://ptzgovorit.ru/news/eshche-desyat-sluchaev-covid-19-vyyavleno-v-karelii>Еще десять случаев COVID-19 выявлено в Карелии</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://interfax.com.ua/news/general/662678.html>Шесть новых случаев коронавируса обнаружено за сутки в Житомирской области</a></td>
+      <td><a href=https://telegraf.com.ua/ukraina/mestnyiy/5471946-covid-19-na-zhitomirshhine-naschitali-pochti-550-zarazheniy.html>COVID-19: на Житомирщине насчитали почти 550 заражений</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://gazeta19.ru/index.php/v-rossii-i-mire/item/43540-v-zabajkale-gorit-2-5-tysyachi-gektarov-lesa>В Забайкалье горит 2,5 тысячи гектаров леса</a></td>
+      <td><a href=https://altairk.ru/new/society/pyat_lesnih_pozharov_potushili_v_irkutskoy_oblasti_16_maya>Пять лесных пожаров потушили в Иркутской области 16 мая</a></td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://newstracker.ru/news/society/17-05-2020/koronavirusom-za-sutki-zarazilis-98-zhiteley-stavropolya>Коронавирусом за сутки заразились 98 жителей Ставрополья</a></td>
+      <td><a href=https://kavkaz.mk.ru/incident/2020/05/17/gubernator-na-stavropole-rezhim-samoizolyacii-prodlyat-eshhe-na-nedelyu.html>Губернатор: на Ставрополье режим самоизоляции продлят еще на неделю</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://eadaily.com/ru/news/2020/05/17/sinoptik-poyasnil-pochemu-centralnuyu-rossiyu-zhdyot-anomalno-holodnaya-pogoda>Синоптик пояснил, почему Центральную Россию ждёт аномально холодная погода</a></td>
+      <td><a href=https://www.business-gazeta.ru/news/468728>Гидрометцентр пообещал аномально холодную погоду в Центральной России</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://www.m24.ru/news/obshchestvo/17052020/118150>В Северной Осетии родился младенец с коронавирусом</a></td>
+      <td><a href=https://www.obozrevatel.com/russia/v-severnoj-osetii-rodilsya-mladenets-s-koronavirusom.htm>В России родился младенец с коронавирусом</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://news.mail.ru/incident/41815184/>Музыкант сыграл гитлеровскую партию</a></td>
+      <td><a href=https://newinform.com/225777-bagdasarov-i-solovev-prizvali-surovo-nakazat-prichastnyh-k-publikacii-foto-gitlera-9-maya>Багдасаров и Соловьев призвали сурово наказать причастных к публикации фото Гитлера 9 мая</a></td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://www.vesti.ru/doc.html?id=3265822>Шахматы. Россиянка Лагно выиграла Мемориал Стейница</a></td>
+      <td><a href=https://tass.ru/sport/8494671>Российская шахматистка Екатерина Лагно выиграла Мемориал Стейница</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://ura.news/news/1052432053>Ведущая НТВ рассказала о «самых страшных часах» жизни при COVID</a></td>
+      <td><a href=https://newinform.com/225646-vedushchaya-ntv-anna-yankina-rasskazala-kak-spaslas-ot-tyazheloi-formy-koronavirusa>Ведущая НТВ Анна Янкина рассказала, как спаслась от тяжелой формы коронавируса</a></td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://telegraf.com.ua/ukraina/politika/5472703-posol-v-turtsii-manipuliruya-istoriey-rf-pyitaetsya-prikryit-prestupleniya-protiv-ukrainyi.html>Посол в Турции: Манипулируя историей, РФ пытается прикрыть преступления против Украины</a></td>
+      <td><a href=https://apostrophe.ua/news/politics/2020-05-17/rossiya-est-vo-vseh-konfliktah-ukrainskiy-diplomat-rezko-vyiskazalsya-ob-agressii-kremlya/197448>Россия есть во всех конфликтах: украинский дипломат резко высказался об агрессии Кремля</a></td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://shazoo.ru/2020/05/17/94426/pervyj-trejler-komedii-eurovision-ot-neflix>Первый трейлер комедии Eurovision от Neflix</a></td>
+      <td><a href=https://inforesist.org/netflix-snyal-komediyu-o-evrovidenii-poyavilsya-pervyj-trejler/>Netflix снял комедию о «Евровидении». Появился первый трейлер</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://inforesist.org/u-olega-lyashko-v-seme-popolnenie/>У Олега Ляшко в семье пополнение</a></td>
+      <td><a href=https://gordonua.com/news/society/ljashko-nazval-novorozhdennogo-syna-aleksandrom-1500198.html>Ляшко назвал новорожденного сына Александром</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=http://ufacitynews.ru/news/2020/05/17/v-dyome-rasshiryat-odnu-iz-problemnyh-dorog/>В Дёме расширят одну из проблемных дорог</a></td>
+      <td><a href=https://glasnarod.ru/rossiya/permskij-kraj/321463-v-permi-na-ulicze-ekskavatornoj-zavershaetsya-ustanovka-novyx-bortovyx-kamnej>В Перми на улице Экскаваторной завершается установка новых бортовых камней</a></td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://www.igromania.ru/news/93797/Insayder_Apple_v_sleduyuschem_godu_vypustit_ochki_dopolnennoy_realnosti.html>Инсайдер: Apple в следующем году выпустит очки дополненной реальности</a></td>
+      <td><a href=http://tvoygorodpskov.ru/2020/05/892883-apple-priobrela-startap-kotoriy-rabotaet-s-virtualnoy.html>Apple приобрела стартап, который работает с виртуальной реальностью</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://sport.ua/news/488155-evgeniy-konoplyanka-hotelos-vyprygnut-iz-okna-na-karantine>Евгений КОНОПЛЯНКА: «Хотелось выпрыгнуть из окна на карантине»</a></td>
+      <td><a href=http://dynamomania.com/news/529815-evgenij-konoplyanka-posedel-ya-na-karantine-hotelos-vyprygnut-iz-okna>Евгений КОНОПЛЯНКА: "Поседел я на карантине. Хотелось выпрыгнуть из окна"</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://rueconomics.ru/442543-neft-marki-wti-podnyalas-vyshe-otmetki-v-30-dollarov-za-barrel>Нефть марки WTI поднялась выше отметки в 30 долларов за баррель</a></td>
+      <td><a href=https://tass.ru/ekonomika/8495335>Цена нефти Brent поднялась до $33,85</a></td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://glavnoe.ua/news/n357026761-borispol-prinjal-3-passazhirskih-charternyh-i-specialnyh-rejsov>"Борисполь" принял 3 пассажирских чартерных и специальных рейсов</a></td>
+      <td><a href=https://ukranews.com/news/702770-184-passazhira-pribyli-spetsrejsami-iz-ssha-kipra-i-finlyandii-gospogransluzhba>Спецрейсами из США, Кипра и Финляндии вернулись почти две сотни украинцев</a></td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://www.m24.ru/news/bezopasnost/17052020/118111>Четыре рейса с российскими военными запланированы на воскресенье из Сербии</a></td>
+      <td><a href=https://www.rbc.ru/rbcfreenews/5ec110d59a79477a769d7547>Из Сербии вылетел последний самолет с российскими военными медиками</a></td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://news.rambler.ru/starlife/44193146-prevratil-sobchak-v-staruhu-v-seti-obsuzhdayut-bogomolova/>«Превратил Собчак в старуху»: в сети обсуждают Богомолова</a></td>
+      <td><a href=https://oane.ws/2020/05/17/konstantin-bogomolov-v-seriale-bezopasnye-svjazi-prevratil-kseniju-sobchak-v-staruhu.html>Константин Богомолов в сериале “Безопасные связи” превратил Ксению Собчак в “старуху”</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://inforeactor.ru/302947-uhod-zyuganova-obernetsya-dlya-kprf-sereznymi-poteryami>Уход Зюганова обернется для КПРФ серьезными потерями</a></td>
+      <td><a href=https://rueconomics.ru/442526-zyuganov-mladshii-rashkin-i-levchenko-unichtozhat-politicheskoe-budushchee-kprf>СМИ: Зюганов-младший, Рашкин и Левченко уничтожат политическое будущее КПРФ</a></td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    
+    <tr>
+      <td><a href=http://istoki.tv/news/proishestvia/v-trosnyanskom-rayone-proizoshlo-dtp-s-postradavshim/>В Троснянском районе произошло ДТП с пострадавшим</a></td>
+      <td><a href=http://istoki.tv/news/people/v-trosnyanskom-rayone-proizoshlo-dtp-s-postradavshim/>В Троснянском районе произошло ДТП с пострадавшим</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://riamobalashiha.ru/article/401214/okolo-840-tys-rublej-pohitili-s-bankovskogo-scheta-zhenschiny-v-moskve.xl?mTitle=&mDesc=&mImg=&mImgWidth=&mImgHeight=>Около 840 тыс рублей похитили с банковского счета женщины в Москве</a></td>
+      <td><a href=https://www.vzsar.ru/news/2020/05/17/jitelnica-saratova-poobschalas-s-robotom-i-lishilas-250-tysyach-rybley.html>Жительница Саратова пообщалась с роботом и лишилась 250 тысяч рублей</a></td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://sport.ua/news/488075-umer-otets-andreya-pavelko>Умер отец Андрея Павелко</a></td>
+      <td><a href=https://strana.ua/sport/football/267711-umer-otets-prezidenta-uaf-andreja-pavelko.html>У президента Украинской ассоциации футбола Андрея Павелко скончался отец</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://piter.tv/event/Institut_Finlyandii_v_Peterburge_zapustit_cikl_onlajn_lekcij/>Институт Финляндии в Петербурге запустит цикл онлайн-лекций</a></td>
+      <td><a href=https://topspb.tv/news/2020/05/17/institut-finlyandii-v-peterburge-podgotovil-onlajn-lekcii/>Институт Финляндии в Петербурге подготовил онлайн-лекции</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://www.innov.ru/news/other/v-nizhegorodskoy-oblasti-vyyavlen/>В Нижегородской области выявлен 281 новый заболевший коронавирусом, 50 пациентов выздоровело, 1 умер</a></td>
+      <td><a href=https://glasnarod.ru/novosti/2-raznye-novosti/321460-v-rossii-vyyavleno-9709-novyx-sluchaev-koronavirusa>В России выявлено 9709 новых случаев коронавируса</a></td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://from-ua.com/news/548718-stepanova-poimali-na-lzhi-o-karantine-lyudi-razvenchali-slova-ministra-onlain-foto-video.html>Степанова поймали на лжи о карантине: люди развенчали слова министра онлайн. ФОТО, ВИДЕО</a></td>
+      <td><a href=https://inforesist.org/stepanov-rasskazal-chto-bylo-by-esli-by-ne-zakryli-metro/>Степанов рассказал, что было бы, если бы не закрыли метро</a></td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://ua.news/ru/zelenskyj-snyal-sanktsyy-s-vnuchky-mussolyny/>Зеленский снял санкции с внучки Муссолини</a></td>
+      <td><a href=https://zn.ua/POLITICS/vosstanovlenie-pravdy-vnuchka-mussoliny-otreagirovala-na-otmenu-sankciy-354485_.html>Восстановление правды: Внучка Муссолины отреагировала на отмену санкций</a></td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://www.m24.ru/news/obshchestvo/17052020/118150>В Северной Осетии родился младенец с коронавирусом</a></td>
+      <td><a href=https://www.rosbalt.ru/russia/2020/05/17/1843770.html>В Северной Осетии родился ребенок с коронавирусом</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://omskzdes.ru/incidents/69679.html>Под Омском при столкновении КамАЗа и "Лады" погиб водитель</a></td>
+      <td><a href=https://gorod55.ru/news/incident/17-05-2020/pod-omskom-lada-priora-v-ehala-v-kamaz-est-pogibshie>Под Омском LADA Priora въехала в «КамАЗ», есть погибшие</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://svpressa.ru/politic/article/265538/>Евгений Сатановский: Давно пора выдвигать танки</a></td>
+      <td><a href=https://svpressa.ru/politic/article/265538/?rpop=1>Евгений Сатановский: Давно пора выдвигать танки</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://ru.krymr.com/a/news-v-mvf-rasskszsli-kogda-vosstanovitsa-ekonomika-posle-coronavirusa/30616574.html>В МВФ рассказали, когда восстановится мировая экономика после коронавируса</a></td>
+      <td><a href=https://gordonua.com/news/worldnews/v-mvf-rasskazali-kogda-mirovaya-ekonomika-smozhet-vernutsya-k-dokoronavirusnomu-urovnyu-1500213.html>В МВФ рассказали, когда мировая экономика сможет вернуться к докоронавирусному уровню</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://www.euro-football.ru/article/44/1004365841_iz-za_karantina_partneru_golovina_martinshu_uvelichili_diskvalifikaciyu_do_10_mesyacev>Из-за карантина партнёру Головина Мартиншу увеличили дисквалификацию до 10 месяцев</a></td>
+      <td><a href=https://footballhd.ru/allnews/frantianews/300686-zhelsonu-martinshu-prodlili-diskvalifikaciyu-do-noyabrya.html>Желсону Мартиншу продлили дисквалификацию до ноября</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://stavropolye.tv/news/133982>Надпись на «Смирновском» бювете отреставрировали в Железноводске</a></td>
+      <td><a href=https://vestikavkaza.ru/news/vlasti-zeleznovodska-nacnut-remont-terrenkura-k-gore-razvalka.html>Власти Железноводска начнут ремонт терренкура к горе Развалка</a></td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://news.mail.ru/incident/41815184/>Музыкант сыграл гитлеровскую партию</a></td>
+      <td><a href=https://www.dvnovosti.ru/khab/2020/05/17/114625/>Причастных к публикации фото нацистов на акции «Бессмертный полк» установил следком</a></td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://russian.rt.com/sport/news/747426-lagno-memorial-steinica>Шахматистка Лагно выиграла мемориал Стейница</a></td>
+      <td><a href=https://tass.ru/sport/8494703>Филатов: победа Лагно на Мемориале Стейница подтвердила высокий уровень шахматистов из РФ</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://topspb.tv/news/2020/05/17/bdt-provodit-onlajn-marafon-v-podderzhku-medikov/>БДТ проводит онлайн-марафон в поддержку медиков</a></td>
+      <td><a href=https://forpost-sz.ru/a/2020-05-17/bdt-zapustil-onlajn-marafon-v-pomoshch-vracham>БДТ запустил онлайн-марафон в помощь врачам</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://www.gametech.ru/news/70142/>Ubisoft подала в суд на Apple и Google</a></td>
+      <td><a href=https://shazoo.ru/2020/05/17/94422/ubisoft-podala-v-sud-na-apple-i-google-iz-za-area-f2-mobilnogo-klona-rainbow-six-siege>Ubisoft подала в суд на Apple и Google из-за Area F2 — мобильного "клона" Rainbow Six Siege</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=http://fapl.ru/posts/78508/>"Арсенал" грозит Лакасетту серьезными последствиями</a></td>
+      <td><a href=http://allsport-news.net/365097_lyakazett_vozmojno_vnov_vdyihal_veselyaschiy_gaz__arsenal_reshit_vopros_vnutri_kluba.html>Ляказетт, возможно, вновь вдыхал веселящий газ. Арсенал решит вопрос внутри клуба</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://news.mail.ru/incident/41815184/>Музыкант сыграл гитлеровскую партию</a></td>
+      <td><a href=https://slovodel.com/560454-demonstraciya-portreta-gitlera-v-germanii-stoila-by-navalnistam-do-treh-let-tyurmy>Демонстрация портрета Гитлера в Германии стоила бы "навальнистам" до трех лет тюрьмы</a></td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://moika78.ru/news/2020-05-18/416474-baltijskomu-flotu-peredadut-malye-raketnye-korabli-karakurt/>Балтийскому флоту передадут малые ракетные корабли «Каракурт»</a></td>
+      <td><a href=https://politexpert.net/197008-raketnyi-kater-tihookeanskogo-flota-proshel-ucheniya-v-yaponskom-more>Ракетный катер Тихоокеанского флота прошел учения в Японском море</a></td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://newinform.com/225748-volkov-pytaetsya-poseyat-somneniya-sredi-rossiyan-o-svoevremennosti-snyatiya-karantinnyh-mer>Волков пытается посеять сомнения среди россиян о своевременности снятия карантинных мер</a></td>
+      <td><a href=https://politros.com/166488-volkov-spekuliruet-na-teme-covid-19-chtoby-nastroit-rossiyan-protiv-popravki-k-konstitucii>Волков спекулирует на теме COVID-19, чтобы настроить россиян против поправки к Конституции</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://sport.ua/news/488083-foto-bekhem-nachal-vnezapno-lyset>ФОТО. Бекхэм начал внезапно лысеть</a></td>
+      <td><a href=https://sport.ua/news/488083-foto-bekhem-vnezapno-nachal-lyset>ФОТО. Бекхэм внезапно начал лысеть</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://www.oreanda.ru/v_mire/na-ukraine-prizvali-vernut-meditsinu-kak-v-sssr/article1317857/>На Украине призвали вернуть медицину «как в СССР»</a></td>
+      <td><a href=https://www.pravda.ru/news/world/1498919-medicina/>Зеленского попросили вернуть медицину "как в СССР"</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://topspb.tv/news/2020/05/17/bdt-provodit-onlajn-marafon-v-podderzhku-medikov/>БДТ проводит онлайн-марафон в поддержку медиков</a></td>
+      <td><a href=https://tass.ru/obschestvo/8493323>БДТ в Петербурге запустил всероссийскую онлайн-эстафету в поддержку врачей</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://myslo.ru/news/tula/2020-05-17-samye-zarazhennye-koronavirusom-goroda-i-derevni-tul-skoj-oblasti-karta-na-17-maya>Самые зараженные коронавирусом города и деревни Тульской области: карта на 17 мая</a></td>
+      <td><a href=https://newstula.ru/fn_561307.html>Динамика распространения коронавируса в Тульской области</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://riamobalashiha.ru/article/401214/okolo-840-tys-rublej-pohitili-s-bankovskogo-scheta-zhenschiny-v-moskve.xl?mTitle=&mDesc=&mImg=&mImgWidth=&mImgHeight=>Около 840 тыс рублей похитили с банковского счета женщины в Москве</a></td>
+      <td><a href=http://newsroom24.ru/news/criminal/209714/>Нижегородка перевела 300 тысяч рублей «сотруднику» банка</a></td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://www.m24.ru/news/bezopasnost/17052020/118111>Четыре рейса с российскими военными запланированы на воскресенье из Сербии</a></td>
+      <td><a href=https://riamo.ru/article/430479/esche-chetyre-samoleta-dostavili-rossijskih-voennyh-iz-serbii-na-aerodrom-v-podmoskove.xl?mTitle=&mDesc=&mImg=&mImgWidth=&mImgHeight=>Еще четыре самолета доставили российских военных из Сербии на аэродром в Подмосковье</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://www.m24.ru/news/bezopasnost/17052020/118111>Четыре рейса с российскими военными запланированы на воскресенье из Сербии</a></td>
+      <td><a href=https://russian.rt.com/world/news/747319-rossiya-serbiya-reisy>Четыре борта с российскими военными из Сербии прибудут в Россию 17 мая</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://vedtver.ru/news/society/17-maya-opublikovany-novye-dannye-po-covid-19-v-tverskoy-oblasti/>17 мая: Опубликованы новые данные по COVID-19 в Тверской области - 500 человек выздоровели</a></td>
+      <td><a href=https://tverigrad.ru/publication/17-maja-v-tverskoj-oblasti-ot-koronavirusa-vylechilis-eshhjo-25-chelovek>17 мая: в Тверской области от коронавируса вылечились ещё 25 человек</a></td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://inforesist.org/u-olega-lyashko-v-seme-popolnenie/>У Олега Ляшко в семье пополнение</a></td>
+      <td><a href=https://donpress.com/news/17-05-2020-oleg-lyashko-obyavil-o-rozhdenii-syna>Олег Ляшко объявил о рождении сына</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://topspb.tv/news/2020/05/17/v-centre-spaseniya-tyulenej-pokazali-kak-kroshik-nablyudaet-za-malenkimi-postoyalcami/>В Центре спасения тюленей показали, как Крошик наблюдает за маленькими постояльцами</a></td>
+      <td><a href=https://piter.tv/event/Peterburzhcev_poradovali_novimi_fotografiyami_Kroshika/>Петербуржцев порадовали новыми фотографиями Крошика</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://forpost-sz.ru/a/2020-05-17/na-kad-na-sezde-v-yanino-sgorela-gazel>На КАД на съезде в Янино сгорела «Газель»</a></td>
+      <td><a href=https://piter.tv/event/Na_KAD_zametili_goryaschuyu_GAZel_/>На КАД заметили горящую "ГАЗель"</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://news.mail.ru/incident/41815184/>Музыкант сыграл гитлеровскую партию</a></td>
+      <td><a href=https://riafan.ru/1277242-klincevich-prizval-bezzhalostno-nakazat-za-foto-nacistov-na-saite-bessmertnogo-polka>Клинцевич призвал безжалостно наказать за фото нацистов на сайте «Бессмертного полка»</a></td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://tass.ru/proisshestviya/8493879>На Кубани в ДТП с микроавтобусом и легковушкой погибли два человека</a></td>
+      <td><a href=https://tass.ru/proisshestviya/8494723>Попавший в ДТП на Кубани микроавтобус перевозил работников строительной фирмы</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://www.mk.ru/incident/2020/05/17/smi-v-promzone-v-podmoskove-gorit-benzovoz.html>СМИ: в промзоне в Подмосковье горит бензовоз</a></td>
+      <td><a href=https://riamo.ru/article/430467/benzovoz-zagorelsya-v-dzerzhinskom.xl?mTitle=&mDesc=&mImg=&mImgWidth=&mImgHeight=>Бензовоз загорелся в Дзержинском</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://www.baikal-daily.ru/news/20/390544/>В Бурятии число случаев коронавируса перевалило хорошо за 900</a></td>
+      <td><a href=https://www.infpol.ru/214509-v-buryatii-rastet-chislo-zabolevshikh-koronavirusom-za-sutki-vyyavili-56-novykh-sluchaev/>В Бурятии растет число заболевших коронавирусом. За сутки выявили 56 новых случаев</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=http://kontrakty.ua/article/156070>Украине прогнозируют дожди, грозы и до +22°</a></td>
+      <td><a href=http://kontrakty.ua/article/156102>Грозовые дожди накроют почти всю Украину</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://news.mail.ru/incident/41815184/>Музыкант сыграл гитлеровскую партию</a></td>
+      <td><a href=https://rueconomics.ru/442512-evropeiskoe-soobshchestvo-osudilo-by-navalnistov-za-publikaciyu-fotosnimkov-nacistov>Европейское сообщество осудило бы "навальнистов" за публикацию фотоснимков нацистов</a></td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://rueconomics.ru/442543-neft-marki-wti-podnyalas-vyshe-otmetki-v-30-dollarov-za-barrel>Нефть марки WTI поднялась выше отметки в 30 долларов за баррель</a></td>
+      <td><a href=https://inosmi.ru/economic/20200517/247442528.html>Bloomberg (США): американские нефтедобывающие компании присоединяются к России и Саудовской Аравии</a></td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://forpost-sz.ru/a/2020-05-17/na-kad-na-sezde-v-yanino-sgorela-gazel>На КАД на съезде в Янино сгорела «Газель»</a></td>
+      <td><a href=https://topspb.tv/news/2020/05/17/na-kad-v-rajone-yanino-sgorela-gazel/>На КАД в районе Янино сгорела «Газель»</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://inforeactor.ru/302947-uhod-zyuganova-obernetsya-dlya-kprf-sereznymi-poteryami>Уход Зюганова обернется для КПРФ серьезными потерями</a></td>
+      <td><a href=https://slovodel.com/560462-smi-prorochat-zabvenie-kprf-na-fone-politicheskih-skandalov-i-vozmozhnogo-uhoda-zyuganova>СМИ пророчат забвение КПРФ на фоне политических скандалов и возможного ухода Зюганова</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://primpress.ru/article/54481>В МЧС предупредили о сильных осадках в Приморье</a></td>
+      <td><a href=https://vostokmedia.com/news/society/17-05-2020/silnyy-dozhd-groza-mchs-rassylaet-trevozhnye-soobscheniya-primortsam>«Сильный дождь, гроза»: МЧС рассылает тревожные сообщения приморцам</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://vedtver.ru/news/society/17-maya-opublikovany-novye-dannye-po-covid-19-v-tverskoy-oblasti/>17 мая: Опубликованы новые данные по COVID-19 в Тверской области - 500 человек выздоровели</a></td>
+      <td><a href=https://tver.mk.ru/social/2020/05/17/v-tverskoy-oblasti-25-chelovek-vyzdoroveli-posle-koronavirusa.html>В Тверской области 25 человек выздоровели после коронавируса</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://shazoo.ru/2020/05/17/94426/pervyj-trejler-komedii-eurovision-ot-neflix>Первый трейлер комедии Eurovision от Neflix</a></td>
+      <td><a href=https://cinemaholics.ru/the-story-of-fire-saga-promo/>Трейлер: «Eurovision Song Contest: The Story Of Fire Saga»</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://inforesist.org/u-olega-lyashko-v-seme-popolnenie/>У Олега Ляшко в семье пополнение</a></td>
+      <td><a href=https://inforeactor.ru/302897-lyashko-poblagodaril-suprugu-za-novorozhdennogo-syna>Ляшко поблагодарил супругу за новорожденного сына</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=http://www.vremyan.ru/news/kulturnuyu_programmu_na_17_maya_podgotovili_nizhegorodskie_teatry___biblioteki_i_muzykalnye_uchrezhdeniya.html>Культурную программу на 17 мая подготовили нижегородские театры, библиотеки и музыкальные учреждения</a></td>
+      <td><a href=https://teatral-online.ru/news/27030/>В проекте #вечерстеатралом – «Миры в столкновении» Молодежного театра Узбекистана</a></td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://akket.com/android/211525-huawei-vyplatit-dengi-vsem-polzovatelyam-smartfonov.html>Huawei выплатит деньги всем пользователям смартфонов</a></td>
+      <td><a href=https://tass.ru/mezhdunarodnaya-panorama/8494563>Китай выступает против ограничений США на поставку компании Huawei компьютерных чипов</a></td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://actualnews.org/exclusive/346038-predstavleno-karmannoe-protivomikrobnoe-sredstvo-dlja-smartfonov-i-ochkov.html>Представлено карманное противомикробное средство для смартфонов и очков</a></td>
+      <td><a href=https://ria-m.tv/news/193124/karmannaya_dezinfektsiya_sozdano_obezzarajivayuschee_sredstvo_dlya_ochkov_i_smartfonov.html>"Карманная" дезинфекция: создано обеззараживающее средство для очков и смартфонов</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://inforesist.org/u-olega-lyashko-v-seme-popolnenie/>У Олега Ляшко в семье пополнение</a></td>
+      <td><a href=https://atn.ua/obshchestvo/u-olega-lyashko-rodilsya-syn>У Олега Ляшко родился сын</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://www.mk.ru/social/2020/05/17/estoniya-zapretila-polety-v-rossiyu-izza-koronavirusa.html>Эстония запретила полеты в Россию из-за коронавируса</a></td>
+      <td><a href=https://people.onliner.by/2020/05/17/estoniya-prekrashhaet-aviasoobshhenie-s-belarusyu>Эстония прекращает авиасообщение с Беларусью из-за ситуации с коронавирусом</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://news.mail.ru/incident/41809570/>СМИ: в Непале зафиксирована первая смерть из-за коронавируса</a></td>
+      <td><a href=https://gordonua.com/news/worldnews/v-nepale-zafiksirovali-pervuyu-smert-ot-covid-19-1500181.html>В Непале зафиксировали первую смерть от COVID-19</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://akket.com/android/211525-huawei-vyplatit-dengi-vsem-polzovatelyam-smartfonov.html>Huawei выплатит деньги всем пользователям смартфонов</a></td>
+      <td><a href=https://andro-news.com/news/pohozhe-tsmc-ne-smozhet-postavlyat-chipy-huawei.html>Похоже, TSMC не сможет поставлять чипы Huawei</a></td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://news.ru/cis/speckomissiya-reshit-vopros-tysyachi-migrantov-kotorye-pytayutsya-uehat-iz-rf/>Спецкомиссия решит вопрос тысячи мигрантов, которые пытаются уехать из РФ</a></td>
+      <td><a href=https://www.ural56.ru/news/645041/>Граждан Киргизии и Узбекистана, которые застряли в Оренбургской области, до конца мая должны переправить домой</a></td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://myslo.ru/news/tula/2020-05-17-samye-zarazhennye-koronavirusom-goroda-i-derevni-tul-skoj-oblasti-karta-na-17-maya>Самые зараженные коронавирусом города и деревни Тульской области: карта на 17 мая</a></td>
+      <td><a href=https://newstula.ru/fn_561426.html>Обновлённая интерактивная карта Тульской области с адресами очагов коронавируса</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://news.ru/world/dzhabarov-ocenil-novuyu-strategiyu-kieva-po-donbassu/>Сенатор Джабаров оценил новую стратегию Киева по Донбассу</a></td>
+      <td><a href=https://ura.news/news/1052432077>Из-за плана Зеленского по Донбассу Украине грозит новый Майдан</a></td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://shazoo.ru/2020/05/17/94426/pervyj-trejler-komedii-eurovision-ot-neflix>Первый трейлер комедии Eurovision от Neflix</a></td>
+      <td><a href=https://shazoo.ru/2020/05/17/94426/pervyj-trejler-komedii-eurovision-ot-netflix>Первый трейлер комедии Eurovision от Netflix</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://informburo.kz/novosti/v-tolebiyskom-rayone-turkestanskoy-oblasti-kotoryy-zatopili-dozhdi-postroyat-chetyre-novyh-mosta-106524.html>В Толебийском районе Туркестанской области, который затопили дожди, построят четыре новых моста</a></td>
+      <td><a href=https://vlast.kz/novosti/39612-vlasti-turkestanskoj-oblasti-obesaut-vosstanovit-doma-postradavsie-ot-podtoplenij-v-tolebijskom-rajone.html>Власти Туркестанской области обещают восстановить дома, пострадавшие от подтоплений в Толебийском районе</a></td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://www.innov.ru/news/other/v-nizhegorodskoy-oblasti-vyyavlen/>В Нижегородской области выявлен 281 новый заболевший коронавирусом, 50 пациентов выздоровело, 1 умер</a></td>
+      <td><a href=https://newdaynews.ru/coronavirus-covid-19/692151.html>В России от коронавируса за сутки скончались 94 человека</a></td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://sova.info/news/chto-izvestno-o-koronaviruse-v-samarskoy-oblasti-na-17-maya/>Что известно о коронавирусе в Самарской области на 17 мая</a></td>
+      <td><a href=https://www.vkonline.ru/news/archive/255659/eshe-27-chelovek-v-samarskoj-oblasti-vylechilis-ot-koronavirusa>Еще 27 человек в Самарской области вылечились от коронавируса</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://www.pravda.ru/news/health/1498938-koronavirus/>Вирусолог оценил уровень опасности коронавируса при беременности</a></td>
+      <td><a href=https://www.pravda.ru/news/health/1498901-virus/>Вирусолог рассказал об опасности коронавируса для беременных</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://ria.ru/20200517/1571587894.html>Священник РПЦ рассказал о состоянии протоиерея Димитрия Смирнова</a></td>
+      <td><a href=https://www.oreanda.ru/gosudarstvo/svyaschennik-rpts-proinformiroval-o-sostoyanii-protoiereya-dimitriya-smirnova/article1317884/>Священник РПЦ проинформировал о состоянии протоиерея Димитрия Смирнова</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://vz.ru/world/2020/5/17/1039829.html>Украинских деятелей корежит от ненависти к русской культуре</a></td>
+      <td><a href=https://lenta.ru/news/2020/05/17/pushsan/>В Совфеде оценили санкции Украины против Эрмитажа и МГУ</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://riamobalashiha.ru/article/401214/okolo-840-tys-rublej-pohitili-s-bankovskogo-scheta-zhenschiny-v-moskve.xl?mTitle=&mDesc=&mImg=&mImgWidth=&mImgHeight=>Около 840 тыс рублей похитили с банковского счета женщины в Москве</a></td>
+      <td><a href=https://vedtver.ru/news/proisshestviya/v-tveri-telefonnye-moshenniki-nashli-ocherednuyu-zhertvu/>В Твери телефонные мошенники нашли очередную жертву</a></td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://piter.tv/event/Policiya_vozbudila_delo_iz_za_gibeli_zhenschini_na_trotuare_posle_DTP/>Полиция возбудила дело из-за гибели женщины на тротуаре после ДТП</a></td>
+      <td><a href=https://piter.tv/event/Na_mesto_smertelnoj_avarii_na_Suvorovskom_prospekte_nachali_prinosit_cveti_/>На место смертельной аварии на Суворовском проспекте люди приносят цветы</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://www.m24.ru/news/bezopasnost/17052020/118111>Четыре рейса с российскими военными запланированы на воскресенье из Сербии</a></td>
+      <td><a href=https://tvzvezda.ru/news/forces/content/2020517136-ZQNnx.html>Два первых самолета из Сербии приземлились на аэродроме Чкаловский</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://ria.ru/20200517/1571575613.html>В Кишиневе протестуют ветераны конфликта в Приднестровье</a></td>
+      <td><a href=https://charter97.org/ru/news/2020/5/17/376777/>«Долой мафию!»: Молдавские ветераны вышли на антиправительственный протест</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=http://fapl.ru/posts/78508/>"Арсенал" грозит Лакасетту серьезными последствиями</a></td>
+      <td><a href=https://nevasport.ru/142800-lyakazett-snova-vdyhal-veselyashhij-gaz-arsenal-provodit-proverku/>Ляказетт снова вдыхал веселящий газ — «Арсенал» проводит проверку</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://akket.com/android/211525-huawei-vyplatit-dengi-vsem-polzovatelyam-smartfonov.html>Huawei выплатит деньги всем пользователям смартфонов</a></td>
+      <td><a href=https://www.iphones.ru/iNotes/kitay-ugrozhaet-vklyuchit-apple-v-spisok-nenadyozhnyh-kompaniy-v-otvet-na-sankcii-protiv-huawei-05-17-2020>Китай угрожает включить Apple в список ненадёжных компаний в ответ на санкции против Huawei</a></td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://polit.info/495662-armiya-rossii-smozhet-maskirovat-voennuyu-tehniku-pod-snezhnye-sugroby>Армия России сможет маскировать военную технику под снежные сугробы</a></td>
+      <td><a href=https://ria.ru/20200517/1571571895.html?utm_source=telegram.me&utm_medium=social&utm_campaign=primenenie-sozdannogo-v-rossii-novogo-ra>Эксперт рассказал о применении в Арктике маскирующего под снег материала</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://inforesist.org/u-olega-lyashko-v-seme-popolnenie/>У Олега Ляшко в семье пополнение</a></td>
+      <td><a href=https://www.facenews.ua/news/2020/480572/>У «радикала» Олега Ляшко родился сын</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://www.mk.ru/social/2020/05/17/estoniya-zapretila-polety-v-rossiyu-izza-koronavirusa.html>Эстония запретила полеты в Россию из-за коронавируса</a></td>
+      <td><a href=https://news.tut.by/society/684879.html>Эстония закрывает аэропорты для полетов в семь стран. Беларусь — в их числе</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://tass.ru/proisshestviya/8493753>В США неизвестный устроил стрельбу в мотеле</a></td>
+      <td><a href=https://informburo.kz/novosti/v-ssha-muzhchina-ustroili-strelbu-v-motele-odin-chelovek-pogib-i-neskolko-postradali-106535.html>В США мужчина устроил стрельбу в мотеле, один человек погиб и несколько пострадали</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://www.interfax.ru/russia/709026>В ДТП с автобусом на Кубани погибли два человека и семеро пострадали</a></td>
+      <td><a href=https://www.rosbalt.ru/russia/2020/05/17/1843771.html>На Кубани трассу не поделили «легковушка» и автобус с вахтовиками: двое погибли, семеро ранены</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://www.zakon.kz/5022815-lukashenko-pozdravil-tokaeva-s-dnem.html>Лукашенко поздравил Токаева с днем рождения</a></td>
+      <td><a href=https://sputnik.by/politics/20200517/1044698776/Lukashenko-pozdravil-Tokaeva-s-dnem-rozhdeniya.html>Лукашенко поздравил Токаева с днем рождения</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://lezgigazet.ru/archives/159429>Въезд и выезд в Ахтынский район полностью закрыт</a></td>
+      <td><a href=https://zamana.info/rubriki/news/obshestvo/94-obshestvo/11352-v-ezd-i-vyezd-v-akhtynskij-rajon-zakryli>Въезд и выезд в Ахтынский район закрыли</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://inforeactor.ru/302947-uhod-zyuganova-obernetsya-dlya-kprf-sereznymi-poteryami>Уход Зюганова обернется для КПРФ серьезными потерями</a></td>
+      <td><a href=https://politexpert.net/197034-kapitalist-provokator-ili-blatnoi-mozhet-stat-novym-predsedatelem-kprf>Капиталист, провокатор или "блатной" может стать новым председателем КПРФ</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://topspb.tv/news/2020/05/17/bdt-provodit-onlajn-marafon-v-podderzhku-medikov/>БДТ проводит онлайн-марафон в поддержку медиков</a></td>
+      <td><a href=https://topspb.tv/news/2020/05/17/marafon-bdt-v-podderzhku-vrachej-sobral-bolee-13-mln-rublej/>Марафон БДТ в поддержку врачей собрал более 1,3 млн рублей</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://riamobalashiha.ru/article/401214/okolo-840-tys-rublej-pohitili-s-bankovskogo-scheta-zhenschiny-v-moskve.xl?mTitle=&mDesc=&mImg=&mImgWidth=&mImgHeight=>Около 840 тыс рублей похитили с банковского счета женщины в Москве</a></td>
+      <td><a href=https://bk55.ru/news/article/168386/>Омич лишился денег при получении компенсации за НДС</a></td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://www.zakon.kz/5022805-kasym-zhomartu-tokaevu-ispolnilos-67-let.html>Касым-Жомарту Токаеву исполнилось 67 лет</a></td>
+      <td><a href=https://www.nur.kz/1856108-kasym-zomartu-tokaevu-ispolnilos-67-let.html>Касым-Жомарту Токаеву исполнилось 67 лет</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://moika78.ru/news/2020-05-18/416474-baltijskomu-flotu-peredadut-malye-raketnye-korabli-karakurt/>Балтийскому флоту передадут малые ракетные корабли «Каракурт»</a></td>
+      <td><a href=https://russian.rt.com/russia/news/747465-vmf-baltflot-osnaschenie>Главком ВМФ России рассказал об оснащении Балтийского флота</a></td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://www.zakon.kz/5022804-kolichestvo-sluchaev-zarazheniya.html>Количество случаев заражения коронавирусом в Казахстане превысило 6 тысяч</a></td>
+      <td><a href=https://yk.kz/news/show/56393>Идёт прирост</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://www.ural56.ru/news/645112/>Бетонные блоки на въезде: как выглядит село Кумак, которое с 18 мая закроют на карантин</a></td>
+      <td><a href=https://www.ural56.ru/news/645099/>Село Кумак в Новоорском районе закрыли на карантин по коронавирусу</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://sport.ua/news/488075-umer-otets-andreya-pavelko>Умер отец Андрея Павелко</a></td>
+      <td><a href=https://isport.ua/football/1842744-umer-otets-andreya-pavelko>Умер отец Андрея Павелко</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://vedtver.ru/news/society/17-maya-opublikovany-novye-dannye-po-covid-19-v-tverskoy-oblasti/>17 мая: Опубликованы новые данные по COVID-19 в Тверской области - 500 человек выздоровели</a></td>
+      <td><a href=https://tverigrad.ru/publication/geografija-koronavirusa-v-tverskoj-oblasti-v-kakih-rajonah-podtverzhdeny-novye-sluchai-zarazhenija>География коронавируса в Тверской области: в каких районах подтверждены новые случаи заражения</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://polit.info/495662-armiya-rossii-smozhet-maskirovat-voennuyu-tehniku-pod-snezhnye-sugroby>Армия России сможет маскировать военную технику под снежные сугробы</a></td>
+      <td><a href=https://news.ru/weapon/rossijskie-razrabotchiki-sozdali-radiopogloshayushuyu-zimnyuyu-maskirovku/>Российские разработчики создали радиопоглощающую зимнюю маскировку</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://komiinform.ru/news/197620/>Владимир Уйба: будем помогать всем пострадавшим от наводнения</a></td>
+      <td><a href=https://www.bnkomi.ru/data/news/111807>Владимир Уйба ответил на вопросы о дорогах, доступности интернета и половодье</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://naviny.by/new/20200517/1589707453-fotofakt-ochered-iz-polusotni-skoryh-v-koronavirusnuyu-bolnicu-v-pitere>Фотофакт. Очередь из полусотни скорых в коронавирусную больницу в Питере</a></td>
+      <td><a href=https://piter.tv/event/ochered_iz_skorih_u_bolnici_122/>Жители Петербурга заметили очередь из автомобилей скорой помощи на проспекте Культуры</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://www.oreanda.ru/v_mire/na-ukraine-prizvali-vernut-meditsinu-kak-v-sssr/article1317857/>На Украине призвали вернуть медицину «как в СССР»</a></td>
+      <td><a href=https://slovodel.com/560434-deputat-shevchenko-zayavil-chto-ukrainskim-medikam-sleduet-perenyat-opyt-sssr>Депутат Шевченко заявил, что украинским медикам следует перенять опыт СССР</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://ua.news/ru/sbu-obnarodovala-arhyvy-kgb-vremen-rasstrelyannogo-vozrozhdenyya/>СБУ обнародовала архивы КГБ времен «Расстрелянного возрождения»</a></td>
+      <td><a href=https://inforesist.org/sbu-obnarodovala-dokumenty-o-sudbah-rasstrelyannogo-vozrozhdeniya/>СБУ обнародовала документы о судьбах «Расстрелянного возрождения»</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://myslo.ru/news/tula/2020-05-17-samye-zarazhennye-koronavirusom-goroda-i-derevni-tul-skoj-oblasti-karta-na-17-maya>Самые зараженные коронавирусом города и деревни Тульской области: карта на 17 мая</a></td>
+      <td><a href=https://newstula.ru/fn_561316.html>Карта коронавируса в Тульской области: пояснения по населенным пунктам в карточках оперштаба</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://www.mk.ru/social/2020/05/17/estoniya-zapretila-polety-v-rossiyu-izza-koronavirusa.html>Эстония запретила полеты в Россию из-за коронавируса</a></td>
+      <td><a href=https://vestikavkaza.ru/news/estonia-zapretila-polety-v-rossiu-turciu-i-rad-drugih-stran-iz-za-koronavirusa.html>Эстония запретила полеты в Россию, Турцию и ряд других стран из-за коронавируса</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=http://trassae95.com/all/photo/2020/05/17/magazin-zagorelsya-na-rynke-7-kilometr-57311.html>Магазин загорелся на рынке «7 километр»</a></td>
+      <td><a href=http://trassae95.com/all/news/2020/05/17/magazin-zagorelsya-na-rynke-7-kilometr-57311.html>Магазин загорелся на рынке «7 километр»</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://rueconomics.ru/442543-neft-marki-wti-podnyalas-vyshe-otmetki-v-30-dollarov-za-barrel>Нефть марки WTI поднялась выше отметки в 30 долларов за баррель</a></td>
+      <td><a href=https://www.nakanune.ru/news/2020/05/18/22573708/>Цены на нефть поднялась выше $33 за баррель</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://info24.ru/news/chislo-zarazivshihsya-koronavirusom-v-rf-prevysilo-280-tysyach-chelovek.html>Число заразившихся коронавирусом в РФ превысило 280 тысяч человек</a></td>
+      <td><a href=https://punkt-a.info/news/novosti-kratko/v-rossii-vyyavleno-9709-novykh-sluchaev-koronavirusa>В России выявлено 9709 новых случаев коронавируса</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=http://www.yugopolis.ru/news/umer-francuzskij-akter-mishel-pikkoli-126910>Умер французский актер Мишель Пикколи</a></td>
+      <td><a href=https://slovodel.com/560415-sostavlen-reiting-samyh-seksualnyh-filmov-vseh-vremen>Составлен рейтинг самых сексуальных фильмов всех времен</a></td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://www.sportsdaily.ru/news/tatyanatarasova-obyasnila-mozhet-li-zagitova-pobezhdat-v-18-let>Татьяна Тарасова объяснила, может ли Загитова побеждать в 18 лет</a></td>
+      <td><a href=https://www.sports.ru/figure-skating/1085588986.html>Татьяна Тарасова: «Подняла бы ценз в женском катании до 18 лет. Медведева, Загитова и Туктамышева могли бы выиграть все турниры»</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://ilenta.com/news/misc/misc_28770.html>Xiaomi выпустила новую светодиодную смарт-лампочку с цоколем E27</a></td>
+      <td><a href=https://3dnews.ru/1011127?utm_source=nova&utm_medium=tg>Беспроводные наушники-вкладыши ReduxBuds обещают до 100 часов автономной работы</a></td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://www.kasparov.ru/material.php?id=5EC0F81381FDC>В десятке богатейших людей Великобритании остался только один россиянин</a></td>
+      <td><a href=https://politros.com/166476-dvadcatku-bogateishih-zhitelei-velikobritanii-popolnili-troe-rossiiskih-biznesmenov>Двадцатку богатейших жителей Великобритании пополнили трое российских бизнесменов</a></td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://gorod55.ru/news/society/17-05-2020/v-omske-zaderzhitsya-zharkaya-pogoda-s-grozami-i-dozhdyami>В Омске задержится жаркая погода с грозами и дождями</a></td>
+      <td><a href=https://oren.mk.ru/social/2020/05/17/v-orenburzhe-ponizitsya-temperaturnyy-fon.html>В Оренбуржье понизится температурный фон</a></td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://sport.ua/news/488127-bundesliga-otygrav-dva-myacha-maynts-uvozit-nichyu-iz-kelna>Бундеслига. Отыграв два мяча, Майнц увозит ничью из Кельна</a></td>
+      <td><a href=https://isport.ua/football/europe/1842967-keln-majnts-22-video-golov-i-obzor-matcha-bundesligi>Кельн - Майнц 2:2 Видео голов и обзор матча Бундеслиги</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://www.riatomsk.ru/article/20200517/pogoda-v-tomske-17-maya/>Воскресенье в Томске будет жарким и без существенных осадков</a></td>
+      <td><a href=https://iz.ru/1012138/2020-05-17/nebolshoi-dozhd-i-do-16-gradusov-ozhidaetsia-v-moskve-17-maia>Небольшой дождь и до +16 градусов ожидается в Москве 17 мая</a></td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    
+    <tr>
+      <td><a href=http://www.angi.ru/news/2880871-%D0%98%D1%81%D1%82%D0%B5%D0%BA-%D0%BA%D0%BE%D0%BD%D1%82%D1%80%D0%B0%D0%BA%D1%82-%D0%BD%D0%B0-%D1%82%D1%80%D0%B0%D0%BD%D0%B7%D0%B8%D1%82-%D1%80%D0%BE%D1%81%D1%81%D0%B8%D0%B9%D1%81%D0%BA%D0%BE%D0%B3%D0%BE-%D0%B3%D0%B0%D0%B7%D0%B0-%D1%87%D0%B5%D1%80%D0%B5%D0%B7-%D1%82%D0%B5%D1%80%D1%80%D0%B8%D1%82%D0%BE%D1%80%D0%B8%D1%8E-%D0%9F%D0%BE%D0%BB%D1%8C%D1%88%D0%B8/>Истек контракт на транзит российского газа через территорию Польши</a></td>
+      <td><a href=https://nation-news.ru/523466-postavki-gaza-iz-rossii-v-es-prodolzhayutsya-nesmotrya-na-istechenie-dogovora-s-polshei>Поставки газа из России в ЕС продолжаются, несмотря на истечение договора с Польшей</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://newstula.ru/fn_561107.html>Житель Тулы задержан за угон старого ВАЗа</a></td>
+      <td><a href=https://vedtver.ru/news/proisshestviya/paren-v-konakovo-ugnal-s-chuzhogo-dvora-moped/>Парень в Конаково угнал с чужого двора мопед</a></td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://www.facenews.ua/news/2020/480579/>Около 700 жителей Дагестана умерли от пневмонии вне коронавирусной статистики</a></td>
+      <td><a href=https://openmedia.io/news/n1/vlasti-zayavili-o-13-tys-zabolevshix-pnevmoniej-i-covid-19-v-dagestane-eto-v-4-raza-bolshe-oficialnyx-dannyx/>Власти заявили о 13 тыс. заболевших пневмонией и COVID-19 в Дагестане. Это в 4 раза больше официальных данных</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://glasnarod.ru/novosti/2-raznye-novosti/321462-v-yakutske-zavershaetsya-otopitelnyj-sezon>В Якутске завершается отопительный сезон</a></td>
+      <td><a href=https://glasnarod.ru/novosti/2-raznye-novosti/321470-v-yakutske-otopitelnyj-sezon-zavershitsya-20-maya>В Якутске отопительный сезон завершится 20 мая</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://www.vesti.ru/doc.html?id=3265728>Юный бразильский хавбек Луис Энрике может перейти в "Ювентус"</a></td>
+      <td><a href=https://footballhd.ru/allnews/italianews/300641-milan-i-yuventus-posporyat-za-18-letnego-forvarda-santosa.html>«Милан» и «Ювентус» поспорят за 18-летнего форварда «Сантоса»</a></td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://vestikavkaza.ru/news/bolnicy-kubani-proveli-pererascet-vyplat-medikam-rabotausim-s-bolnymi-koronavirusom.html>Больницы Кубани провели перерасчет выплат медикам, работающим с больными коронавирусом</a></td>
+      <td><a href=https://www.business-class.su/news/2020/05/18/v-prikame-medikam-za-rabotu-s-covid-pacientami-pereschitayut-vyplaty>В Прикамье медикам из-за технической ошибки пересчитают выплаты за работу с COVID-пациентами</a></td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://isport.ua/power/1842668-overim-dobil-kharrisa-vo-vtorom-raunde>Оверим добил Харриса во втором раунде</a></td>
+      <td><a href=https://lenta.ru/news/2020/05/17/reeem/>Опубликовано видео победы «вытерпевшего ад» Оверима на турнире UFC</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://top68.ru/news/113947-v-rasskazove-na-remont-dorog-i-trotuarov-potratyat-26-millionov-rubley>В Рассказове на ремонт дорог и тротуаров потратят 26 миллионов рублей</a></td>
+      <td><a href=https://stapravda.ru/20200517/na_stavropole_obnovyat_136_km_dorog_v_ramkah_natsproekta_148135.html>На Ставрополье обновят 136 км дорог в рамках нацпроекта</a></td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    
+    <tr>
+      <td><a href=http://www.trud.ru/article/17-05-2020/1389893_putin_nazval_rossiju_otdelnoj_tsivilizatsiej.html>Путин назвал Россию отдельной цивилизацией</a></td>
+      <td><a href=https://www.dp.ru/a/2020/05/17/Vladimir_Putin_nazval_Ros>Владимир Путин назвал Россию отдельной цивилизацией</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://gorod55.ru/news/society/17-05-2020/v-omske-zaderzhitsya-zharkaya-pogoda-s-grozami-i-dozhdyami>В Омске задержится жаркая погода с грозами и дождями</a></td>
+      <td><a href=https://novokuznetsk.ru/2020/05/17/pogoda-v-kuzbasse-v-nachale-nedeli-stanet-eshhyo-teplee/>Погода в Кузбассе в начале недели станет ещё теплее</a></td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://donpress.com/news/17-05-2020-v-stolice-ukrainy-za-sutki-covid-19-zarazilis-10-medikov>В столице Украины за сутки COVID-19 заразились 10 медиков</a></td>
+      <td><a href=https://ria-m.tv/news/193105/desyatki_novyih_zarajeniy_i_tri_smerti_statistika_po_koronavirusu_v_kieve_na_17_maya.html>Десятки новых заражений и три смерти: статистика по коронавирусу в Киеве на 17 мая</a></td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://sport.ua/news/488155-evgeniy-konoplyanka-hotelos-vyprygnut-iz-okna-na-karantine>Евгений КОНОПЛЯНКА: «Хотелось выпрыгнуть из окна на карантине»</a></td>
+      <td><a href=http://dynamomania.com/news/529745-sergej-krivcov---o-situacii-v-sbornoj-ukrainy-mne-ne-zapadlo-pomyt-butsy>Сергей Кривцов - о ситуации в сборной Украины: "Мне не западло помыть бутсы"</a></td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://inforeactor.ru/region/msk/302964-opershtab-77-pacientov-s-koronavirusom-skonchalis-v-moskve-za-sutki>Оперштаб: 77 пациентов с коронавирусом скончались в Москве за сутки</a></td>
+      <td><a href=https://riamo.ru/article/430407/3855-novyh-sluchaev-covid-19-vyyavili-v-moskve-za-sutki.xl?mTitle=&mDesc=&mImg=&mImgWidth=&mImgHeight=>3855 новых случаев Covid‑19 выявили в Москве за сутки</a></td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://moika78.ru/news/2020-05-17/416259-v-gidromettsentre-sprognozirovali-anomalno-holodnuyu-pogodu-v-tsentralnoj-rossii/>В Гидрометцентре спрогнозировали аномально холодную погоду в Центральной России</a></td>
+      <td><a href=https://www.onlinetambov.ru/news/society/v-2020-godu-rossiyan-zhdet-anomalnoe-pokholodanie/>В 2020 году россиян ждет аномальное похолодание</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=http://www.yugopolis.ru/news/umer-francuzskij-akter-mishel-pikkoli-126910>Умер французский актер Мишель Пикколи</a></td>
+      <td><a href=https://www.rosbalt.ru/world/2020/05/17/1843761.html>Эксперты назвали самый сексуальный фильм всех времен</a></td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://gorod-plus.tv/news/74352>Александр Беглов: Мы должны сделать медицинские сервисы умными и удобными</a></td>
+      <td><a href=https://karpovka.com/2020-05-17/v-roddomah-peterburga-nachali-vnedryat-elektronnye-medkarty-dlya-novorozhdennyh/>В роддомах Петербурга начали внедрять электронные медкарты для новорожденных </a></td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://gorod55.ru/news/society/17-05-2020/v-omske-zaderzhitsya-zharkaya-pogoda-s-grozami-i-dozhdyami>В Омске задержится жаркая погода с грозами и дождями</a></td>
+      <td><a href=https://gnkk.ru/news/na-sleduyushhey-nedele-budet-po-letnemu-t/>На следующей неделе будет по-летнему тепло</a></td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://tass.ru/obschestvo/8493959>Воробьев рассказал, какие ограничения снимут в Подмосковье с 18 мая</a></td>
+      <td><a href=https://riamo.ru/article/430461/rabotu-promyshlennyh-predpriyatij-i-stroitelstvo-vozobnovyat-v-podmoskove-v-ponedelnik.xl?mTitle=&mDesc=&mImg=&mImgWidth=&mImgHeight=>Работу промышленных предприятий и строительство возобновят в Подмосковье в понедельник</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://xn--b1ats.xn--80asehdb/feed/obshchestvo/v-volgogradskoy-oblasti-za-sutki-koronavirusom-zaboleli-5-detey-6535855341.html>В Волгоградской области за сутки коронавирусом заболели 5 детей</a></td>
+      <td><a href=https://vestirama.ru/novosti/20200517-17.11.04.html>Полсотни новых диагнозов COVID поставили за сутки в Оренбуржье</a></td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://www.facenews.ua/news/2020/480579/>Около 700 жителей Дагестана умерли от пневмонии вне коронавирусной статистики</a></td>
+      <td><a href=https://news.ru/regions/bolee-40-vrachej-v-dagestane-umerli-ot-koronavirusa/>Более 40 врачей в Дагестане умерли от коронавируса</a></td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://korrespondent.net/ukraine/4229518-sytuatsyia-v-oos-sem-obstrelov-ranen-boets-vsu>Ситуация в ООС: семь обстрелов, ранен боец ВСУ</a></td>
+      <td><a href=https://ukranews.com/news/702738-obstrely-na-donbasse-boeviki-primenili-granatomety-i-minomety>Боевики применили запрещенное оружие. Украинские позиции обстреляли из гранатометов и минометов</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://www.mk.ru/social/2020/05/17/v-rossii-9709-novykh-sluchaev-koronavirusa-pochti-polovina-bez-simptomov.html>В России 9709 новых случаев коронавируса, почти половина без симптомов</a></td>
+      <td><a href=https://penzanews.ru/medicine/142235-2020>В Пензенской области число умерших пациентов с коронавирусом достигло 11 человек</a></td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    
+    <tr>
+      <td><a href=http://timer-odessa.net/news/covid_19_v_ukraine_433_novih_zarajeniy_po_strane_i_12_v_odesskoy_oblasti_465.html>COVID-19 в Украине: 433 новых заражений по стране и 12 в Одесской области</a></td>
+      <td><a href=https://donpress.com/news/17-05-2020-v-ukraine-fiksiruetsya-umenshenie-kolichestva-zarazhennyh-covid-19-za-sutki>В Украине фиксируется уменьшение количества зараженных COVID-19 за сутки: опубликованы свежие данные</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://top68.ru/news/113947-v-rasskazove-na-remont-dorog-i-trotuarov-potratyat-26-millionov-rubley>В Рассказове на ремонт дорог и тротуаров потратят 26 миллионов рублей</a></td>
+      <td><a href=https://pobeda26.ru/novosti/obshhestvo/na-stavropole-otremontiruyut-136-kilometrov-dorog-po-naczproektu>На Ставрополье отремонтируют 136 километров дорог по нацпроекту</a></td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://lb.ua/society/2020/05/17/457720_kievskoy_oblasti_tri_cheloveka.html>В Киевской области три человека погибли в результате столкновения ВАЗа с деревом</a></td>
+      <td><a href=https://newinform.com/225802-lobovoe-stolknovenie-legkovushek-v-kurganskoi-oblasti-privelo-k-gibeli-detei>Лобовое столкновение легковушек в Курганской области привело к гибели детей</a></td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://versia.ru/v-rossii-za-poslednie-sutki-vyyavleno-9709-novyx-sluchaev-zarazheniya-koronavirusom>В России за последние сутки выявлено 9709 новых случаев заражения коронавирусом</a></td>
+      <td><a href=https://www.bfm.ru/news/443901>Два дня подряд прирост случаев COVID-19 в России за сутки не превысил 10 тысяч человек</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://newstula.ru/fn_561107.html>Житель Тулы задержан за угон старого ВАЗа</a></td>
+      <td><a href=https://www.vkonline.ru/news/archive/255644/zhitel-yuzhnogo-goroda-voroval-iz-podezdov-kolyaski-i-velosipedy>Житель Южного города воровал из подъездов коляски и велосипеды</a></td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://runews24.ru/society/17/05/2020/78d96b2e23456a059bf6f69241ecd9a8>В топ-20 богатейших жителей Великобритании вошли трое россиян</a></td>
+      <td><a href=https://www.mk.ru/economics/2020/05/17/usmanov-podnyalsya-v-reytinge-samykh-bogatykh-biznesmenov-britanii.html?utm_source=yxnews&utm_medium=desktop&utm_referrer=https%3A%2F%2Fyandex.ru%2Fnews>Усманов поднялся в рейтинге самых богатых бизнесменов Британии</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://ura.news/news/1052432066>В России выявлено 9 709 новых заражений коронавирусом</a></td>
+      <td><a href=https://mperspektiva.ru/topics/v-rossii-zafiksirovali-9709-novykh-sluchaev-koronavirusa/>В России зафиксировали 9709 новых случаев коронавируса</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=http://mirmol.ru/novosti/v-dagestane-vyzdorovelo-ot-koronavirusa-1705-chelovek/>В Дагестане выздоровело от коронавируса 1705 человек</a></td>
+      <td><a href=https://mkala.mk.ru/social/2020/05/17/v-dagestane-koronavirus-podtverdilsya-eshhyo-u-91-cheloveka.html>За прошедшие сутки в Дагестане выявили 91 случай COVID-19</a></td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://gazeta19.ru/index.php/v-khakasii/item/43546-operativnaya-informatsiya-po-zabolevaemosti-koronavirusom-v-khakasii-na-17-maya>Оперативная информация по заболеваемости коронавирусом в Хакасии на 17 мая</a></td>
+      <td><a href=https://donday.ru/na-donu-bolshinstvo-novyh-zarazivshihsja-covid-19-ljudi-do-65-let.html>На Дону большинство новых заразившихся COVID-19 – люди до 65 лет</a></td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://dontimes.news/press-czentr-nm-dnr-16-maya-v-rezultate-minomyotnogo-obstrela-razrusheno-4-doma-pod-gorlovkoj/>Пресс-центр НМ ДНР: 16 мая в результате миномётного обстрела разрушено 4 дома под Горловкой</a></td>
+      <td><a href=https://dontimes.news/press-czentr-nm-lnr-16-maya-v-rezultate-obstrela-pogib-boej-respubliki/>Пресс-центр НМ ЛНР: 16 мая в результате обстрела погиб боец республики</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://tver.mk.ru/incident/2020/05/17/v-tverskoy-oblasti-rasskazali-skolko-eshhe-chelovek-zarazilis-covid19-za-sutki.html>В Тверской области рассказали, сколько еще человек заразились COVID-19 за сутки</a></td>
+      <td><a href=https://up74.ru/articles/news/120174/>В Челябинской области подтвердилось 97 новых случаев коронавируса</a></td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    
+    <tr>
+      <td><a href=http://istoki.tv/news/people/v-trosnyanskom-rayone-proizoshlo-dtp-s-postradavshim/>В Троснянском районе произошло ДТП с пострадавшим</a></td>
+      <td><a href=http://istoki.tv/news/proishestvia/v-trosnyanskom-rayone-proizoshlo-dtp-s-postradavshim/>В Троснянском районе произошло ДТП с пострадавшим</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=http://timer-odessa.net/news/covid_19_v_ukraine_433_novih_zarajeniy_po_strane_i_12_v_odesskoy_oblasti_465.html>COVID-19 в Украине: 433 новых заражений по стране и 12 в Одесской области</a></td>
+      <td><a href=https://lb.ua/society/2020/05/17/457700_kolichestvo_bolnih_koronavirusom.html>Количество больных коронавирусом в Украине превысило 18 тысяч</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://bimru.ru/news/128862>54-летняя Паулина Поризкова показала фигуру в бикини</a></td>
+      <td><a href=https://inforeactor.ru/302955-54-letnyaya-supermodel-iz-chehii-pokazala-figuru-v-bikini?utm_source=yxnews&utm_medium=desktop&utm_referrer=https%3A%2F%2Fyandex.ru%2Fnews>54-летняя супермодель из Чехии показала фигуру в бикини</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://www.interfax.ru/moscow/709020>На Филевской линии метро восстановили движение поездов</a></td>
+      <td><a href=https://www.molnet.ru/mos/ru/important/o_744305>Движение поездов приостановлено на участке Филевской линии метро</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://news-r.ru/news/rostov_oblast/478193/>Плюс 115: новые случаи заражения коронавирусом выявлены в Ростовской области</a></td>
+      <td><a href=https://www.yarnews.net/news/show/yaroslavl-region/51431/v_yaroslavskoj_oblasti_za_sutki_ecshe_97_chelovek_zarazilos_koronavirusom.htm>В Ярославской области за сутки еще 97 человек заразилось коронавирусом</a></td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://3dnews.ru/1011120>Раскрыт смартфон Realme X50 Pro Player Edition: шесть камер и 65-Вт подзарядка</a></td>
+      <td><a href=https://telegraf.com.ua/tehnologii/5472744-v-seti-poyavilis-harakteristiki-neanonsirovannyih-xiaomi-redmi-10x-i-redmi-10x-pro.html>В сети появились характеристики неанонсированных Xiaomi Redmi 10X и Redmi 10X Pro</a></td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://www.obozrevatel.com/abroad/v-italii-rekordno-upala-smertnost-ot-koronavirusa.htm>Впервые с начала карантина: в Италии рекордно упала смертность от коронавируса</a></td>
+      <td><a href=https://gordonua.com/news/worldnews/v-italii-zafiksirovan-novyy-minimum-sutochnyh-poter-ot-koronavirusa-s-nachala-karantina-1500230.html>В Италии зафиксирован новый минимум суточных потерь от коронавируса с начала карантина</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://tass.ru/obschestvo/8493959>Воробьев рассказал, какие ограничения снимут в Подмосковье с 18 мая</a></td>
+      <td><a href=https://russian.rt.com/russia/news/747379-podmoskove-oslablenie-ogranichenii>Власти Подмосковья рассказали об ослаблениях ограничительных мер</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://politros.com/166514-rossiiskii-yumorist-pisarenko-osadil-ukrainca-posle-voprosa-o-kryme>Российский юморист Писаренко осадил украинца после вопроса о Крыме</a></td>
+      <td><a href=https://nation-news.ru/523471-pisarenko-ne-pozvolil-vtyanut-sebya-v-provokacionnoe-obsuzhdenie-prinadlezhnosti-kryma>Писаренко не позволил втянуть себя в провокационное обсуждение принадлежности Крыма</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://nevasport.ru/142749-fanaty-lokomotiva-symitirovali-pohorony-kiknadze-i-meshheryakova/>Фанаты «Локомотива» сымитировали похороны Кикнадзе и Мещерякова</a></td>
+      <td><a href=https://www.vesti.ru/doc.html?id=3265698>Болельщики "Локомотива" поддержали Семина, нарисовав граффити возле "РЖД Арены"</a></td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://inforeactor.ru/302897-lyashko-poblagodaril-suprugu-za-novorozhdennogo-syna>Ляшко поблагодарил супругу за новорожденного сына</a></td>
+      <td><a href=https://gordonua.com/news/society/lyashko-nazval-syna-aleksandrom-1500198.html>Ляшко назвал сына Александром</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://donday.ru/v-novocherkasske-neizvestnye-obstreljali-muzhchinu-iz-pnevmatiki.html>В Новочеркасске неизвестные обстреляли мужчину из пневматики</a></td>
+      <td><a href=https://news-r.ru/news/rostov_oblast/478330/>Неизвестные обстреляли 47-летнего мужчину из пневматического оружия в Новочеркасске</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://tass.ru/mezhdunarodnaya-panorama/8494935>Трамп в ответ на критику Обамы обвинил его в некомпетентности</a></td>
+      <td><a href=https://www.oreanda.ru/v_mire/obama-raskritikoval-rukovodstvo-ssha/article1317844/>Обама раскритиковал руководство США</a></td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://tass.ru/mezhdunarodnaya-panorama/8494935>Трамп в ответ на критику Обамы обвинил его в некомпетентности</a></td>
+      <td><a href=https://iz.ru/1012126/2020-05-17/obama-obvinil-vlasti-ssha-v-neumelom-rukovodstve-stranoi>Обама обвинил власти США в неумелом руководстве страной</a></td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://3dnews.ru/1011120>Раскрыт смартфон Realme X50 Pro Player Edition: шесть камер и 65-Вт подзарядка</a></td>
+      <td><a href=https://astera.ru/news/huawei-v-kitae-svyshe-10-modelej-smartfonov-obnovlyaet-do-emui-10-1/>Huawei в Китае свыше 10 моделей смартфонов обновляет до EMUI 10.1</a></td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://www.facenews.ua/news/2020/480579/>Около 700 жителей Дагестана умерли от пневмонии вне коронавирусной статистики</a></td>
+      <td><a href=https://lenta.ru/news/2020/05/17/dag40/>В Дагестане умерли более 40 врачей с коронавирусом и пневмонией</a></td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://football.ua/france/421932-zhelson-martinsh-ne-smozhet-sygrat-do-konca-nojabrja.html>Желсон Мартинш не сможет сыграть до конца ноября</a></td>
+      <td><a href=https://football.ua/france/421932-zhelsonu-martinshu-prodlili-diskvalifikaciyu-do-noyabrya.html>Желсону Мартиншу продлили дисквалификацию до ноября</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://polit.info/495706-troe-rossiyan-voshli-v-dvadcatku-bogateishih-zhitelei-britanii>Трое россиян вошли в двадцатку богатейших жителей Британии</a></td>
+      <td><a href=https://tvzvezda.ru/news/vstrane_i_mire/content/2020517938-KZsNe.html>В двадцатку богатейших жителей Великобритании вошли трое россиян</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://politros.com/166447-moskovskie-mediki-vylechili-ot-covid-19-bolee-27-tysyach-chelovek>Московские медики вылечили от COVID-19 более 27 тысяч человек</a></td>
+      <td><a href=https://politexpert.net/region/msk/196946-rakova-soobshchila-o-1458-vylechivshihsya-ot-covid-19-pacientah-za-sutki>Ракова сообщила о 1458 вылечившихся от COVID-19 пациентах за сутки</a></td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://lenta.ru/news/2020/05/17/77die/>В Москве умерли еще 77 человек с коронавирусом</a></td>
+      <td><a href=https://theins.ru/news/220062>По официальным данным в Москве за сутки скончались 77 человек с коронавирусом</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://moscow-baku.ru/news/novosti_azerbaydzhana/v_azerbaydzhane_za_sutki_6_072_cheloveka_protestirovany_na_koronavirus/>В Азербайджане за сутки 6 072 человека протестированы на коронавирус</a></td>
+      <td><a href=https://moscow-baku.ru/news/novosti_azerbaydzhana/v_azerbaydzhane_chislo_sluchaev_infitsirovaniya_koronavirusom_dostiglo_3_274/>В Азербайджане число случаев инфицирования коронавирусом достигло 3 274</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://korrespondent.net/ukraine/4229518-sytuatsyia-v-oos-sem-obstrelov-ranen-boets-vsu>Ситуация в ООС: семь обстрелов, ранен боец ВСУ</a></td>
+      <td><a href=https://donpress.com/news/17-05-2020-chleny-nvf-6-raz-obstrelyali-pozicii-sil-oos-na-donbasse-raniv-ukrainskogo-voennogo>Члены НВФ 6 раз обстреляли позиции сил ООС на Донбассе, ранив украинского военного</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=http://tvoygorodpskov.ru/2020/05/892903-v-seti-internet-opublikovali-1-iy-rolik-iz-komedii-netflix.html>В сети интернет опубликовали 1-ый ролик из комедии Netflix о Евровидении</a></td>
+      <td><a href=https://shazoo.ru/2020/05/17/94426/pervyj-trejler-komedii-eurovision-ot-netflix>Первый трейлер комедии Eurovision от Netflix</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=http://fapl.ru/posts/78507/>Руни считает, что увольнение Ван Галя из МЮ было ошибкой</a></td>
+      <td><a href=https://bombardir.ru/news/604036-Direktor-Borussii-D-Kramer-Klopp-mog-by-stat-kanclerom-Germanii%20>Директор «Боруссии» Д Крамер: «Клопп мог бы стать канцлером Германии»</a></td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://glasnarod.ru/rossiya/permskij-kraj/321461-chislo-vyzdorovevshix-ot-koronavirusa-v-prikame-na-100-prevysilo-kolichestvo-zabolevshix>Число выздоровевших от коронавируса в Прикамье на 100 превысило количество заболевших</a></td>
+      <td><a href=https://www.bnkomi.ru/data/news/111803>В Инте увеличилось число заболевших COVID-19</a></td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://3dnews.ru/1011120>Раскрыт смартфон Realme X50 Pro Player Edition: шесть камер и 65-Вт подзарядка</a></td>
+      <td><a href=https://ilenta.com/news/misc/misc_28773.html>Перечислены ближайшие новинки компании Xiaomi</a></td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://tass.ru/mezhdunarodnaya-panorama/8493497>Нетаньяху представил парламенту 35-е правительство Израиля</a></td>
+      <td><a href=https://inforeactor.ru//302917-putin-pozdravil-netanyahu-s-pereizbraniem-na-post-premera-izrailya>Путин поздравил Нетаньяху с переизбранием на пост премьера Израиля</a></td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://inforesist.org/ssha-vyveli-na-orbitu-voennyj-kosmoplan-iz-za-nego-spacex-perenesli-zapusk-60-sputnikov/>США вывели на орбиту военный космоплан. Из-за него SpaceX перенесла запуск 60 спутников</a></td>
+      <td><a href=https://politros.com/166495-raketa-nositel-atlas-5-s-sekretnym-shattlom-startovala-vo-floride>Ракета-носитель Atlas 5 с секретным шаттлом стартовала во Флориде</a></td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://www.facenews.ua/news/2020/480570/>Внучка диктатора Муссолини объяснила, почему Украина исключила ее из санкционных списков</a></td>
+      <td><a href=https://ua.news/ru/zelenskyj-snyal-sanktsyy-s-vnuchky-mussolyny/>Зеленский снял санкции с внучки Муссолини</a></td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://www.nakanune.ru/news/2020/05/17/22573693/>Выбрано место проведения "Евровидения" в 2021 году</a></td>
+      <td><a href=https://news.ykt.ru/article/100868>«Евровидение-2021» пройдет в Роттердаме</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://tvkrasnodar.ru/news/v_krasnodare_snizilos_chislo_novyih_patsientov_s_koronavirusom-94321/>В Краснодаре снизилось число новых пациентов с коронавирусом</a></td>
+      <td><a href=https://www.dg-yug.ru/news/110578.html>Стали известны подробности о новых случаях коронавируса на Кубани</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://gordonua.com/news/politics/mid-ukrainy-prizvalo-mezhdunarodnoe-soobshchestvo-obratit-vnimanie-na-repressii-proishodyashchie-na-okkupirovannyh-rf-ukrainskih-territoriyah-1500204.html>МИД Украины призвал международное сообщество обратить внимание на репрессии, происходящие на оккупированных РФ украинских территориях</a></td>
+      <td><a href=https://www.5.ua/ru/polytyka/rossyiskaia-ahressyia-vernula-na-nashu-zemliu-y-polytycheskye-repressyy-myd-ukrayni-215112.html>Российская агрессия вернула на нашу землю и политические репрессии – МИД Украины</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://newstula.ru/fn_561107.html>Житель Тулы задержан за угон старого ВАЗа</a></td>
+      <td><a href=https://severpost.ru/read/95686/>Житель Апатитов пытался угнать машину на глазах у владельца</a></td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://www.overclockers.ua/news/software/2020-05-17/126879/>Разработчики HWiNFO готовятся к релизу видеоядер AMD Navi 21 и Navi 22</a></td>
+      <td><a href=https://overclockers.ru/blog/TEXHAPb/show/36958/amd-predstavila-neskolko-prodvinutyh-tehnologij-trassirovki-luchej-dlya-buduschih-videokart-radeon-navi-rdna-2-i-igrovyh-pristavok>AMD представила несколько продвинутых технологий трассировки лучей для будущих видеокарт Radeon Navi RDNA 2 и игровых приставок</a></td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://www.bfm.ru/news/443898>В Москве за сутки от коронавируса выздоровели почти 1,5 тысячи человек</a></td>
+      <td><a href=https://www.interfax.ru/moscow/709048>В Москве за сутки скончалось рекордное число пациентов с коронавирусом</a></td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://lb.ua/world/2020/05/17/457704_posla_kitaya_izraile_nashli_mertvim.html>Посла Китая в Израиле нашли мертвым в его резиденции</a></td>
+      <td><a href=https://fakty.com.ua/ru/svit/20200517-posla-kytayu-v-izrayili-znajshly-mertvym-na-vlasnij-rezydentsiyi/>Посла Китая в Израиле нашли мертвым на собственной резиденции</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://www.intermedia.ru/news/347384>Умер комик Фред Уиллард</a></td>
+      <td><a href=https://news.rambler.ru/world/44191874-skonchalas-rezhisser-seriala-utrennee-shou/>Умерла режиссер «Утреннего шоу»</a></td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://www.facenews.ua/news/2020/480579/>Около 700 жителей Дагестана умерли от пневмонии вне коронавирусной статистики</a></td>
+      <td><a href=https://ru.krymr.com/a/news-koronavirus-dagestan/30617079.html>Россия: в Дагестане от «внебольничной пневмонии» скончались почти 700 человек</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://russian.rt.com/sport/news/747376-popova-figurnoe-katanie>Фигуристка Попова: в России невозможно красиво уйти от одного тренера к другому</a></td>
+      <td><a href=https://nevasport.ru/142719-popova-mozhno-li-ujti-k-drugomu-treneru-krasivo-ne-v-rossii/>Попова: Можно ли уйти к другому тренеру красиво? Не в России</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://www.mk.ru/incident/2020/05/17/v-promzone-v-dzerzhinskom-likvidirovali-otkrytoe-gorenie-benzovozov.html>В промзоне в Дзержинском ликвидировали открытое горение бензовозов</a></td>
+      <td><a href=https://newinform.com/225768-benzovoz-i-konteinery-zagorelis-v-promzone-podmoskovnogo-dzerzhinskogo>Бензовоз и контейнеры загорелись в промзоне подмосковного Дзержинского</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://3dnews.ru/1011120>Раскрыт смартфон Realme X50 Pro Player Edition: шесть камер и 65-Вт подзарядка</a></td>
+      <td><a href=https://anonsens.ru/37537_sostoyalsya_debyut_smartfona_huawei_p40_lite_5g_nuramura1979>Состоялся дебют смартфона Huawei P40 Lite 5G</a></td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://telegraf.com.ua/ukraina/mestnyiy/5472996-komanduyushhiy-oos-rasskazal-o-karantinnyih-merah-na-peredovoy.html>Командующий ООС рассказал о карантинных мерах на передовой</a></td>
+      <td><a href=https://www.obozrevatel.com/crime/nosyat-li-v-vsu-maski-i-kto-platit-za-lechenie-naev-rasskazal-o-situatsii-s-covid-19.htm>Носят ли в ВСУ маски и кто платит за лечение: Наев рассказал о ситуации с COVID-19</a></td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://www.facenews.ua/news/2020/480579/>Около 700 жителей Дагестана умерли от пневмонии вне коронавирусной статистики</a></td>
+      <td><a href=https://tass.ru/obschestvo/8492637>В Дагестане более 40 медиков умерли от пневмонии и коронавируса</a></td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://www.rosbalt.ru/world/2020/05/17/1843743.html>Стало известно о смене стратегии Зеленского по Донбассу</a></td>
+      <td><a href=https://rueconomics.ru/442427-verhovnaya-rada-anonsirovala-smenu-strategii-zelenskogo-po-donbassu>Верховная Рада анонсировала смену стратегии Зеленского по Донбассу</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://news-r.ru/news/rostov_oblast/478209/>В Ростовской области еще три пациента умерли от коронавируса</a></td>
+      <td><a href=https://navigato.ru/novosti/publication/ih-uje-1581-viiavili-70-novih-zabolevshih-koronavirusom>Их уже 1581: выявили 70 новых заболевших коронавирусом</a></td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://sport.ua/news/488083-foto-bekhem-vnezapno-nachal-lyset>ФОТО. Бекхэм внезапно начал лысеть</a></td>
+      <td><a href=https://sport.ua/news/488083-foto-bekhem-nachal-vnezapno-lyset>ФОТО. Бекхэм начал внезапно лысеть</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://newstula.ru/fn_561107.html>Житель Тулы задержан за угон старого ВАЗа</a></td>
+      <td><a href=https://inforeactor.ru/region/spb/302876-vozmozhnyi-naletchik-na-avtoservis-v-peterburge-obratilsya-v-bolnicu-s-perelomami-pyatok>Возможный налетчик на автосервис в Петербурге обратился в больницу с переломами пяток</a></td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://news-r.ru/news/rostov_oblast/478193/>Плюс 115: новые случаи заражения коронавирусом выявлены в Ростовской области</a></td>
+      <td><a href=https://sputnik-abkhazia.ru/news/20200517/1030149094/V-Rossii-za-sutki-vyyavleno-9709-novykh-sluchaev-koronavirusa.html>В России за сутки выявлено 9709 новых случаев коронавируса</a></td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://www.sports.ru/football/1085590822.html>Фанаты «Алании» призвали допустить клуб к участию в ФНЛ</a></td>
+      <td><a href=https://bombardir.ru/news/604070-Gogniev-Alaniya-hotela-by-igrat-v-FNL-i-poprobovat-sebya-na-novom-urovne%20>Гогниев: «Алания» хотела бы играть в ФНЛ и попробовать себя на новом уровне»</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://www.rbc.ru/business/17/05/2020/5ec151ee9a794707b6375882>Red Wings закупит 16 самолетов МС-21</a></td>
+      <td><a href=https://rueconomics.ru/442492-dalnevostochnaya-kompaniya-priobretet-60-samoletov-ssj-100-i-mc-21>Дальневосточная компания приобретет 60 самолетов SSJ-100 и MC-21</a></td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    
+    <tr>
+      <td><a href=http://trassae95.com/all/photo/2020/05/17/goncshiki-vtoruyu-nochj-podryad-snosyat-zabory-u-izmailjskogo-porta-57305.html>Гонщики вторую ночь подряд сносят заборы у Измаильского порта</a></td>
+      <td><a href=http://trassae95.com/all/news/2020/05/17/goncshiki-vtoruyu-nochj-podryad-snosyat-zabory-u-izmailjskogo-porta-57305.html>Гонщики вторую ночь подряд сносят заборы у Измаильского порта</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://bimru.ru/news/128862>54-летняя Паулина Поризкова показала фигуру в бикини</a></td>
+      <td><a href=https://nation-news.ru/523464-byvshaya-supermodel-pokazala-idealnuyu-figuru-v-54-goda>Бывшая супермодель показала идеальную фигуру в 54 года</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://ria.ru/20200517/1571563796.html>Биолог назвала опасность комнатных мух</a></td>
+      <td><a href=https://www.mk.ru/science/2020/05/18/effektivnost-masok-dlya-borby-s-covid19-dokazali-na-khomyakakh.html?utm_source=yxnews&utm_medium=desktop&utm_referrer=https%3A%2F%2Fyandex.ru%2Fnews>Эффективность масок для борьбы с COVID-19 доказали на хомяках</a></td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://newstula.ru/fn_561107.html>Житель Тулы задержан за угон старого ВАЗа</a></td>
+      <td><a href=https://www.mvestnik.ru/newslent/v-apatitah-policejskimi-zaderzhan-muzhchina-kotoryj-pytalsya-ugnat-avtomobil-pryamo-na-glazah-u-vladelca/>В Апатитах полицейскими задержан мужчина, который пытался угнать автомобиль прямо на глазах у владельца</a></td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://korrespondent.net/ukraine/4229518-sytuatsyia-v-oos-sem-obstrelov-ranen-boets-vsu>Ситуация в ООС: семь обстрелов, ранен боец ВСУ</a></td>
+      <td><a href=https://glavnoe.ua/news/n357026750-na-donbasse-ne-prekraschajutsja-boestolknovenija-ranen-odin-voennosluzhaschij>На Донбассе не прекращаются боестолкновения. Ранен один военнослужащий</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://ria.ru/20200517/1571584471.html>В Подмосковье локализовали возгорание бензовозов и контейнеров</a></td>
+      <td><a href=https://ria.ru/20200517/1571583495.html>В Подмосковье загорелись бензовоз и три контейнера</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://www.sports.ru/football/1085590822.html>Фанаты «Алании» призвали допустить клуб к участию в ФНЛ</a></td>
+      <td><a href=https://bombardir.ru/news/604058-Bolelschiki-Alanii-obratilis-k-RFS-s-prosboy-pustit-klub-v-FNL%20>Болельщики «Алании» обратились к РФС с просьбой пустить клуб в ФНЛ</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=http://trassae95.com/all/photo/2020/05/17/2-pacienta-s-koronavirusom-skonchalisj-v-odesse-za-poslednie-sutki-57310.html>2 пациента с коронавирусом скончались в Одессе за последние сутки</a></td>
+      <td><a href=http://trassae95.com/all/news/2020/05/17/2-pacienta-s-koronavirusom-skonchalisj-v-odesse-za-poslednie-sutki-57310.html>2 пациента с коронавирусом скончались в Одессе за последние сутки</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://ura.news/news/1052432103>Медики пермских больниц не получили выплаты за больных COVID. Проверяют пять медучреждений</a></td>
+      <td><a href=http://www.trud.ru/article/17-05-2020/1389896_na_kubani_prokuratura_proverjaet_soobschenija_o_narushenijax_po_vyplatam_medikam.html>На Кубани прокуратура проверяет сообщения о нарушениях по выплатам медикам</a></td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://racurs.ua/n138328-v-kitae-priznalis-chto-vlasti-uhanya-ponachalu-skryvali-dannye-o-koronaviruse.html>В Китае признались, что власти Уханя скрывали данные о коронавирусе</a></td>
+      <td><a href=https://www.mk.ru/social/2020/05/17/v-kitae-priznali-chto-ukhan-preumenshal-masshtaby-vspyshki-koronavirusa.html>В Китае признали, что Ухань преуменьшал масштабы вспышки коронавируса</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://news-r.ru/news/rostov_oblast/478193/>Плюс 115: новые случаи заражения коронавирусом выявлены в Ростовской области</a></td>
+      <td><a href=http://kontrakty.ua/article/156072>В России количество зараженных COVID-19 уже превышает 270 тысяч</a></td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://gorod55.ru/news/society/17-05-2020/v-omske-zaderzhitsya-zharkaya-pogoda-s-grozami-i-dozhdyami>В Омске задержится жаркая погода с грозами и дождями</a></td>
+      <td><a href=https://www.molnet.ru/mos/ru/culture/o_744278>На следующей неделе горожан ждет прохладная и ветреная погода</a></td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://moscow-baku.ru/news/society/kadyrov_potreboval_uvolit_medikov_iz_za_zhalob_na_nekhvatku_masok/>Кадыров потребовал уволить медиков из-за жалоб на нехватку масок</a></td>
+      <td><a href=https://ura.news/news/1052432121>Кадыров требует уволить врачей за жалобу на нехватку масок</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://charter97.org/ru/news/2020/5/17/376789/>В России число инфицированных коронавирусом превысило 281 тысячу человек</a></td>
+      <td><a href=https://moika78.ru/news/2020-05-17/416354-pyat-umershih-ot-koronavirusa-peterburzhtsev-byli-starshe-65-let/>Пять умерших от коронавируса петербуржцев были старше 65 лет</a></td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    
+    <tr>
+      <td><a href=http://trassae95.com/all/photo/2020/05/17/driftery-nochjyu-meshali-spatj-odessitam-video-57308.html>Дрифтеры ночью мешали спать одесситам. Видео</a></td>
+      <td><a href=http://trassae95.com/all/news/2020/05/17/driftery-nochjyu-meshali-spatj-odessitam-video-57308.html>Дрифтеры ночью мешали спать одесситам. Видео</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://tvkrasnodar.ru/news/v_krasnodare_pojarnyie_tushat_krupnoe_vozgoranie_travyi-94324/>В Краснодаре пожарные тушат крупное возгорание травы</a></td>
+      <td><a href=https://www.yuga.ru/news/450613/>В Краснодаре ночью сгорел строящийся спорткомплекс</a></td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://nn.mk.ru/social/2020/05/17/v-nizhegorodskoy-oblasti-verificirovan-281-novyy-sluchay-covid19.html>В Нижегородской области верифицирован 281 новый случай COVID-19</a></td>
+      <td><a href=https://donday.ru/v-krasnodarskom-krae-diagnoz-koronavirus-podtverdilsja-esche-u-95-chelovek.html>В Краснодарском крае коронавирус подтвердился еще у 95 человек</a></td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://mosregtoday.ru/soc/chislo-avtobusov-uvelichat-v-podmoskove-v-chasy-pik-v-ponedelnik/>В Подмосковье увеличат количество автобусов в часы пик в понедельник</a></td>
+      <td><a href=https://riamo.ru/article/430466/chislo-avtobusov-uvelichat-v-podmoskove-v-chasy-pik-18-maya.xl?mTitle=&mDesc=&mImg=&mImgWidth=&mImgHeight=>Число автобусов увеличат в Подмосковье в часы пик 18 мая</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://iz.ru/1012131/2020-05-17/gensek-oon-rasskazal-o-problemakh-lgbt-soobshchestva-vo-vremia-pandemii>Генсек ООН рассказал о проблемах ЛГБТ-сообщества во время пандемии</a></td>
+      <td><a href=https://www.mk.ru/social/2020/05/17/mediki-otkazyvayutsya-lechit-geev-vsyakiy-sbrod-mozhno-ne-spasat.html>Медики отказываются лечить геев: «Всякий сброд можно не спасать»</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://gorod55.ru/news/society/17-05-2020/v-omske-zaderzhitsya-zharkaya-pogoda-s-grozami-i-dozhdyami>В Омске задержится жаркая погода с грозами и дождями</a></td>
+      <td><a href=https://primpress.ru/article/54471>Вечером в Приморье местами ожидается дождь</a></td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://news-r.ru/news/rostov_oblast/478193/>Плюс 115: новые случаи заражения коронавирусом выявлены в Ростовской области</a></td>
+      <td><a href=https://gorod55.ru/news/society/17-05-2020/za-sutki-v-rossii-covid-19-podtverdilsya-esche-u-9-709-chelovek>За сутки в России COVID-19 подтвердился еще у 9 709 человек</a></td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://inforesist.org/ssha-vyveli-na-orbitu-voennyj-kosmoplan-iz-za-nego-spacex-perenesli-zapusk-60-sputnikov/>США вывели на орбиту военный космоплан. Из-за него SpaceX перенесла запуск 60 спутников</a></td>
+      <td><a href=https://news.rambler.ru/tech/44194244-ssha-zapustili-v-kosmos-sekretnyy-korabl/>США запустили в космос секретный корабль</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://donpress.com/news/17-05-2020-v-stolice-ukrainy-za-sutki-covid-19-zarazilis-10-medikov>В столице Украины за сутки COVID-19 заразились 10 медиков</a></td>
+      <td><a href=https://ukranews.com/news/702742-koronavirus-v-kieve-na-17-maya-podtverdili-u-eshhe-59-chelovek>В Киеве после резкого всплеска заболеваемости количество случаев коронавируса пошло на спад</a></td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://www.euro-football.ru/article/32/1004365821_v_pyatom_sezone_kryadu_levandovski_zabil_ne_menee_40_golov>В пятом сезоне кряду Левандовски забил не менее 40 голов</a></td>
+      <td><a href=https://sport.ua/news/488143-levandovski-zabil-40-golov-v-pyatom-sezone-podryad>Левандовски забил 40 голов в пятом сезоне подряд</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://newinform.com/region/msk/225645-moskovskie-pozharnye-nashli-ubituyu-pensionerku-v-goryashchei-kvartire>Московские пожарные нашли убитую пенсионерку в горящей квартире</a></td>
+      <td><a href=https://vestikavkaza.ru/news/pozar-v-kvartire-v-apseronske-unes-zizn-muzciny.html>Пожар в квартире в Апшеронске унес жизнь мужчины</a></td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://korrespondent.net/ukraine/4229518-sytuatsyia-v-oos-sem-obstrelov-ranen-boets-vsu>Ситуация в ООС: семь обстрелов, ранен боец ВСУ</a></td>
+      <td><a href=https://telegraf.com.ua/ukraina/mestnyiy/5471992-shtab-oos-boeviki-vosem-raz-narushali-tishinu-ranen-ukrainskiy-boets.html>Штаб ООС: боевики восемь раз нарушали "тишину", ранен украинский боец</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://riamo.ru/article/430406/prohladnaya-pogoda-i-dozhdi-ozhidayutsya-v-moskovskom-regione-na-sleduyuschej-nedele.xl?mTitle=&mDesc=&mImg=&mImgWidth=&mImgHeight=>Прохладная погода и дожди ожидаются в Московском регионе на следующей неделе</a></td>
+      <td><a href=https://mosregtoday.ru/eco/sinoptiki-nazvali-prichiny-neobychno-holodnoj-pogody-v-stolichnom-regione/>Синоптики назвали причины необычно холодной погоды в столичном регионе</a></td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://www.obozrevatel.com/abroad/v-italii-rekordno-upala-smertnost-ot-koronavirusa.htm>Впервые с начала карантина: в Италии рекордно упала смертность от коронавируса</a></td>
+      <td><a href=https://www.capital.ua/ru/news/141543-v-ispanii-vpervye-za-dva-mesyatsa-zhertv-koronavirusa-za-sutki-menee-100-chelovek>В Испании впервые за два месяца жертв коронавируса за сутки менее 100 человек</a></td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://info24.ru/news/chislo-zarazivshihsya-koronavirusom-v-rf-prevysilo-280-tysyach-chelovek.html>Число заразившихся коронавирусом в РФ превысило 280 тысяч человек</a></td>
+      <td><a href=https://www.baikal-daily.ru/news/20/390559/>В России выявили 9 709 новых случаев коронавируса</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://gorod55.ru/news/society/17-05-2020/v-omske-zaderzhitsya-zharkaya-pogoda-s-grozami-i-dozhdyami>В Омске задержится жаркая погода с грозами и дождями</a></td>
+      <td><a href=https://agenda-u.org/news/v-nachale-novoy-nedeli-sverdlovchanam-ne-stoit-zhdat-teplyh-solnechnyh-dney>В начале новой недели свердловчанам не стоит ждать теплых солнечных дней</a></td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://interfax.com.ua/news/general/662704.html>На Волыни правоохранители задержали контрабандиста при попытке подкупа пограничника</a></td>
+      <td><a href=https://interfax.com.ua/news/general/662708.html>На Волыни правоохранители задержали контрабандиста при попытке подкупа пограничника</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://russian.rt.com/sport/news/747341-smi-alonso-reno>СМИ: Renault пригласит Алонсо, чтобы остаться в «Формуле-1»</a></td>
+      <td><a href=http://allsport-news.net/365069_daniel_rikkardo_ob_idealnom_pilote_ne_dumayu_chto_shumaher_byil_byistreyshim_gonschikom_v_istorii_formulyi_1.html>Даниэль Риккардо об идеальном пилоте: Не думаю, что Шумахер был быстрейшим гонщиком в истории Формулы-1</a></td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://ura.news/news/1052432103>Медики пермских больниц не получили выплаты за больных COVID. Проверяют пять медучреждений</a></td>
+      <td><a href=https://www.rbc.ru/rbcfreenews/5ec1562f9a7947083cfa8bec>В Белгородской области проверят жалобы медиков на отсутствие выплат</a></td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://riamo.ru/article/430441/glava-rospotrebnadzora-otmetila-chto-v-rf-stabilizirovalas-situatsiya-s-covid-19.xl?mTitle=&mDesc=&mImg=&mImgWidth=&mImgHeight=>Глава Роспотребнадзора отметила, что в РФ стабилизировалась ситуация с Covid‑19</a></td>
+      <td><a href=https://news2.ru/story/599758/>Вирусолог Аграновский заявил, что носить маски на улицах бессмысленно и вредно</a></td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://ria-m.tv/news/193102/rekordsmenu_knigi_rekordov_ginnessa_iz_zaporojskoy_oblasti_ispolnilos_70_let.html>Рекордсмену Книги рекордов Гиннесса из Запорожской области исполнилось 70 лет</a></td>
+      <td><a href=https://mig.com.ua/chempionu-mira-po-girevomu-sportu-timofeju-kostenko-70/>Чемпиону мира по гиревому спорту Тимофею Костенко – 70! (видео, фото)</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://real-vin.com/vsu-dali-moshhnuju-otvetku-okkupantam-vozle-pesok>ВСУ дали мощную ответку оккупантам возле Песок</a></td>
+      <td><a href=https://real-vin.com/vsu-s-poterjami-otbili-ataku-terroristov-dnr>ВСУ с потерями отбили атаку террористов «ДНР»</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://apostrophe.ua/news/society/2020-05-17/dojdi-vozvraschayutsya-sinoptiki-predupredili-ukraintsev-o-nepogode/197320>Дожди возвращаются: синоптики предупредили украинцев о непогоде</a></td>
+      <td><a href=https://from-ua.com/news/548658-grozi-i-livni-sinoptiki-rezko-izmenili-prognoz-pogodi.html>Грозы и ливни: синоптики резко изменили прогноз погоды</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://slovodel.com/560424-pribyvshih-iz-serbii-v-rf-voennyh-medikov-proveryayut-na-nalichie-covid-19>Прибывших из Сербии в РФ военных медиков проверяют на наличие COVID-19</a></td>
+      <td><a href=https://tass.ru/obschestvo/8492655>ВКС России совершат четыре рейса для возвращения военных РФ из Сербии</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://www.vesti.ru/doc.html?id=3265728>Юный бразильский хавбек Луис Энрике может перейти в "Ювентус"</a></td>
+      <td><a href=https://telegraf.com.ua/sport-cat/futbol/5472492-yuventus-zadumal-obmen-futbolistami-s-barselonoy.html>Ювентус задумал обмен футболистами с Барселоной</a></td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://russian.rt.com/ussr/news/747361-koronavirus-statistika-belorussiya>Почти 10 тысяч человек выздоровели после COVID-19 в Белоруссии</a></td>
+      <td><a href=https://informburo.kz/novosti/chislo-zarazhyonnyh-covid-19-v-kazahstane-prevysilo-6000-chelovek--106523.html>Число заражённых Covid-19 в Казахстане превысило 6000 человек</a></td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://tvkrasnodar.ru/news/v_krasnodare_snizilos_chislo_novyih_patsientov_s_koronavirusom-94321/>В Краснодаре снизилось число новых пациентов с коронавирусом</a></td>
+      <td><a href=https://www.vkpress.ru/life/na-kubani-koronavirus-diagnostirovali-eshche-u-95-chelovek/?id=130533>На Кубани коронавирус диагностировали еще у 95 человек</a></td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://sova.info/news/na-samarskuyu-oblast-obrushatsya-dozhdi170520/>В Самарской области рабочая неделя начнётся с дождей и заморозков</a></td>
+      <td><a href=https://russian.rt.com/nopolitics/news/747335-sinoptiki-pogoda-moskva>Синоптики рассказали о погоде в Москве на следующей неделе</a></td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://news-r.ru/news/rostov_oblast/478193/>Плюс 115: новые случаи заражения коронавирусом выявлены в Ростовской области</a></td>
+      <td><a href=http://t-l.ru/283349.html>Суточный прирост COVID-19 в Тюменской области составил 33 случая</a></td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    
+    <tr>
+      <td><a href=http://www.trud.ru/article/17-05-2020/1389893_putin_nazval_rossiju_otdelnoj_tsivilizatsiej.html>Путин назвал Россию отдельной цивилизацией</a></td>
+      <td><a href=https://www.mvestnik.ru/newslent/putin-buduwee-rossijskoj-civilizacii-zavisit-ot-uspeha-v-razvitii-vysokih-tehnologij/>Путин: будущее российской цивилизации зависит от успеха в развитии высоких технологий</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://tver.mk.ru/incident/2020/05/17/v-tverskoy-oblasti-rasskazali-skolko-eshhe-chelovek-zarazilis-covid19-za-sutki.html>В Тверской области рассказали, сколько еще человек заразились COVID-19 за сутки</a></td>
+      <td><a href=https://rzn.mk.ru/social/2020/05/17/na-koronavirus-proveryayut-2448-ryazancev-svodka-na-1300-17-maya.html>На коронавирус проверяют 2448 рязанцев: сводка на 13.00 17 мая</a></td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://www.euro-football.ru/article/32/1004365821_v_pyatom_sezone_kryadu_levandovski_zabil_ne_menee_40_golov>В пятом сезоне кряду Левандовски забил не менее 40 голов</a></td>
+      <td><a href=https://footballhd.ru/allnews/germanianews/300678-levandovski-zabil-40-myachey-v-pyatom-sezone-podryad.html>Левандовски забил 40 мячей в пятом сезоне подряд</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://glasnarod.ru/rossiya/permskij-kraj/321499-koefficzient-zarazhaemosti-covid-19-v-permskom-krae-bolshe-2>Коэффициент заражаемости COVID-19 в Пермском крае больше 2</a></td>
+      <td><a href=https://www.onlinetambov.ru/news/society/glava-rospotrebnadzora-zayavila-ob-ostanovke-prirosta-chisla-zarazheniya-koronavirusom/>Глава Роспотребнадзора заявила об остановке прироста числа заражения коронавирусом</a></td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://korrespondent.net/world/4229489-vo-frantsyy-nedovolny-reshenyem-ytalyy-po-hranytsam>Во Франции недовольны решением Италии по границам</a></td>
+      <td><a href=https://korrespondent.net/world/4229489-vo-frantsyy-nedovolny-reshenyem-ytalyy-otkryt-hranytsy>Во Франции недовольны решением Италии открыть границы</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=http://pozitciya.com.ua/79896-ermak-ukraina-gotova-k-peregovoram-s-uchastiem-predstaviteley-ordlo.html>Ермак: Украина готова к переговорам с участием представителей ОРДЛО</a></td>
+      <td><a href=https://ria.ru/20200517/1571564220.html>В Киеве решили вести переговоры со своими представителями Донбасса</a></td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://russian.rt.com/sport/news/747341-smi-alonso-reno>СМИ: Renault пригласит Алонсо, чтобы остаться в «Формуле-1»</a></td>
+      <td><a href=https://www.vesti.ru/doc.html?id=3265697>Фернандо Алонсо не собирается возвращаться в "Формулу-1"</a></td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://gorod55.ru/news/society/17-05-2020/v-omske-zaderzhitsya-zharkaya-pogoda-s-grozami-i-dozhdyami>В Омске задержится жаркая погода с грозами и дождями</a></td>
+      <td><a href=https://www.metronews.ru/novosti/moscow/reviews/v-moskvu-pridet-prohladnaya-i-vetrenaya-pogoda-1673468/>В Москву придёт прохладная и ветреная погода</a></td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://gordonua.com/news/worldnews/vtoraya-strana-v-mire-zayavila-chto-pobedila-koronavirus-1500245.html>Вторая страна в мире заявила, что победила коронавирус</a></td>
+      <td><a href=https://gordonua.com/news/worldnews/eshche-odna-strana-obyavila-chto-pobedila-koronavirus-1500245.html>Еще одна страна объявила, что победила коронавирус</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://rueconomics.ru/442504-obnovlenie-windows-10-privodit-k-potere-failov-i-zvuka>Обновление Windows 10 приводит к потере файлов и звука</a></td>
+      <td><a href=https://ilenta.com/news/mac-windows/news_28771.html>Последнее обновление Windows 10 удаляет файлы и создает проблемы со звуком</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=http://ivona.bigmir.net/showbiz/paparazzi/486909--Uzhe-vse-horosho---Doch--Sindi-Krouford-napugala-poklonnikov-snimkom-v-kupal-nike>"Уже все хорошо": Дочь Синди Кроуфорд напугала поклонников снимком в купальнике</a></td>
+      <td><a href=https://nation-news.ru/523281-britanskaya-model-demi-rouz-na-karantine-pobalovala-podpischikov-foto-bez-byustgaltera>Британская модель Деми Роуз на карантине побаловала подписчиков фото без бюстгальтера</a></td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    
+    <tr>
+      <td><a href=http://newsroom24.ru/news/zhizn/209710/>Более 80 тысяч кубометров мусора вывезли с несанкционированных свалок в регионе</a></td>
+      <td><a href=https://www.niann.ru/?id=552220>Случаи выброса мусора у автодорог участились в Нижегородской области</a></td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://ria.ru/20200517/1571563796.html>Биолог назвала опасность комнатных мух</a></td>
+      <td><a href=https://ura.news/news/1052432135>Эффективность масок доказали на хомяках</a></td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://www.baikal-daily.ru/news/16/390560/>В Улан-Удэ воздух прогреется до +21</a></td>
+      <td><a href=https://kazan.mk.ru/social/2020/05/17/v-tatarstane-18-maya-na-pochve-i-v-vozdukhe-zamorozki-do-2.html>В Татарстане 18 мая на почве и в воздухе заморозки до -2˚</a></td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://www.baikal-daily.ru/news/16/390560/>В Улан-Удэ воздух прогреется до +21</a></td>
+      <td><a href=https://smoldaily.ru/na-smolenshhine-v-ponedelnik-budet-oblachno-i-dozhdlivo>На Смоленщине в понедельник будет облачно и дождливо </a></td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://charter97.org/ru/news/2020/5/17/376789/>В России число инфицированных коронавирусом превысило 281 тысячу человек</a></td>
+      <td><a href=https://forpost-sz.ru/a/2020-05-17/v-komzdrave-peterburga-rasskazali-podrobnosti-o-pyaterykh-novykh-umershikh-s>В комздраве Петербурга рассказали подробности о пятерых новых умерших с коронавирусом</a></td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://www.kasparov.ru/material.php?id=5EC0F81381FDC>В десятке богатейших людей Великобритании остался только один россиянин</a></td>
+      <td><a href=https://www.m24.ru/news/ehkonomika/17052020/118146>Три россиянина попали в двадцатку богатейших жителей Великобритании</a></td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://www.euro-football.ru/article/32/1004365821_v_pyatom_sezone_kryadu_levandovski_zabil_ne_menee_40_golov>В пятом сезоне кряду Левандовски забил не менее 40 голов</a></td>
+      <td><a href=https://russian.rt.com/sport/news/747440-levandovski-40-golov>Левандовски забил не менее 40 голов в пятом сезоне подряд</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://tvkrasnodar.ru/news/v_krasnodare_pojarnyie_tushat_krupnoe_vozgoranie_travyi-94324/>В Краснодаре пожарные тушат крупное возгорание травы</a></td>
+      <td><a href=https://donday.ru/v-novocherkasske-pri-pozhare-v-pjatijetazhke-postradali-dva-pensionera.html>В Новочеркасске при пожаре в пятиэтажке пострадали два пенсионера</a></td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    
+    <tr>
+      <td><a href=http://trassae95.com/all/important/2020/05/17/peshehod-brosilsya-pod-avtomobilj-v-odesse-video-57307.html>Пешеход бросился под автомобиль в Одессе. Видео</a></td>
+      <td><a href=http://trassae95.com/all/photo/2020/05/17/peshehod-brosilsya-pod-avtomobilj-v-odesse-video-57307.html>Пешеход бросился под автомобиль в Одессе. Видео</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://3dnews.ru/1011135>Первые тесты 4-ядерного 2,8-ГГц Intel Tiger Lake U — AMD может не беспокоиться</a></td>
+      <td><a href=https://overclockers.ru/blog/goldas/show/36964/processor-intel-tiger-lake-u-byl-zamechen-v-testah-s-taktovoj-chastotoj-2-8-ggc>Процессор Intel Tiger Lake-U был замечен в тестах с тактовой частотой 2,8 ГГц</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=http://www.yugopolis.ru/news/umer-francuzskij-akter-mishel-pikkoli-126910>Умер французский актер Мишель Пикколи</a></td>
+      <td><a href=https://www.nur.kz/1856160-nazvan-samyj-seksualnyj-film-vseh-vremen.html?utm_source=telegram&utm_medium=article-share-top>Назван самый сексуальный фильм всех времен</a></td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://vchaspik.ua/v-mire/477752-evrovidenie-2021-stalo-izvestno-kto-primet-pesennyy-konkurs-v-sleduyushchem-godu>Евровидение-2021: стало известно, кто примет песенный конкурс в следующем году</a></td>
+      <td><a href=http://www.trud.ru/article/17-05-2020/1389889_evrovidenie_v_2021_godu_projdet_v_rotterdame.html>«Евровидение» в 2021 году пройдет в Роттердаме</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://bimru.ru/news/128862>54-летняя Паулина Поризкова показала фигуру в бикини</a></td>
+      <td><a href=https://lenta.ru/news/2020/05/17/paulina/>54-летняя бывшая супермодель показала тело в бикини</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://1prime.ru/News/20200517/831458658.html>Усманов, Фридман и Абрамович вошли в топ-20 богатейших жителей Британии</a></td>
+      <td><a href=https://1prime.ru/News/20200517/831458664.html>Усманов, Фридман и Абрамович вошли в топ-20 богатейших жителей Британии</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://tass.ru/obschestvo/8493959>Воробьев рассказал, какие ограничения снимут в Подмосковье с 18 мая</a></td>
+      <td><a href=https://www.kasparov.ru/material.php?id=5EC14D2ADE565>Промпредприятия Подмосковья начнут работать с 18 мая</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://news-r.ru/news/rostov_oblast/478193/>Плюс 115: новые случаи заражения коронавирусом выявлены в Ростовской области</a></td>
+      <td><a href=https://www.ural56.ru/news/645097/>+35 случаев коронавируса подтверждено в Оренбургской области, +9709 в России за сутки</a></td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://3dnews.ru/1011120>Раскрыт смартфон Realme X50 Pro Player Edition: шесть камер и 65-Вт подзарядка</a></td>
+      <td><a href=http://tvoygorodpskov.ru/2020/05/892872-samsung-galaxy-a51-naibolee-udachniy-v-prodazhe-android.html>Самсунг Galaxy A51 — наиболее удачный в продаже Android-смартфон по результатам прошедшего квартала</a></td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://astera.ru/news/huawei-v-rossii-skoro-predstavit-novye-smartfony-i-naushniki/>Huawei в России скоро представит новые смартфоны и наушники</a></td>
+      <td><a href=https://astera.ru/news/huawei-uzhe-nachala-testirovat-smartfony-huawei-p50-i-huawei-mate-40/>Huawei уже начала тестировать смартфоны Huawei P50 и Huawei Mate 40</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://www.kasparov.ru/material.php?id=5EC0F81381FDC>В десятке богатейших людей Великобритании остался только один россиянин</a></td>
+      <td><a href=http://www.trud.ru/article/17-05-2020/1389887_troe_rossijan_voshli_v_dvadtsatku_bogatejshix_zhitelej_velikobritanii.html>Трое россиян вошли в двадцатку богатейших жителей Великобритании</a></td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://news.rambler.ru/world/44191651-v-germanii-obvinili-nato-v-provokatsiyah-u-granits-rossii/>НАТО обвинили в провокациях у границ России</a></td>
+      <td><a href=https://politexpert.net/196951-nemeckie-smi-nazvali-ucheniya-nato-v-latvii-provokaciei-v-adres-rossii>Немецкие СМИ назвали учения НАТО в Латвии провокацией в адрес России</a></td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://dni.ru/health/2020/5/17/450018.html>Прорыв: создано лекарство от коронавируса</a></td>
+      <td><a href=https://oblast45.ru/publication/32368>Ученые обнаружили антитела, которые защищают от коронавируса</a></td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://news-r.ru/news/rostov_oblast/478193/>Плюс 115: новые случаи заражения коронавирусом выявлены в Ростовской области</a></td>
+      <td><a href=https://inforeactor.ru/302860-shestero-pacientov-s-covid-19-umerli-v-podmoskove-za-poslednie-sutki>Шестеро пациентов с COVID-19 умерли в Подмосковье за последние сутки</a></td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://kurer-sreda.ru/2020/05/17/557307-pogib-voditel-perevernuvshegosya-v-kyuvet-nissan-cube-v-novosibirskoj-oblasti-pyanoj-passazhirke-xot-by-chto>Погиб водитель перевернувшегося в кювет Nissan Cube в Новосибирской области. Пьяной пассажирке хоть бы что</a></td>
+      <td><a href=https://gorod55.ru/news/incident/17-05-2020/lobovoe-stolknovenie-s-gruzovikom-v-omskoy-oblasti-oboshlos-bez-pogibshih>Лобовое столкновение с грузовиком в Омской области обошлось без погибших</a></td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://tass.ru/proisshestviya/8494989>Пожар на территории промзоны в Дзержинском потушили</a></td>
+      <td><a href=https://iz.ru/1012320/2020-05-17/spasateli-likvidirovali-pozhar-v-podmoskovnom-dzerzhinske>Спасатели ликвидировали пожар в подмосковном Дзержинском</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://www.riatomsk.ru/article/20200517/pogoda-v-tomske-17-maya/>Воскресенье в Томске будет жарким и без существенных осадков</a></td>
+      <td><a href=https://ptzgovorit.ru/news/oblachno-i-nebolshoy-dozhd-chto-zhdat-ot-prirody-v-ponedelnik-18-maya>Облачно и небольшой дождь: что ждать от природы в понедельник, 18 мая</a></td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://gazeta19.ru/index.php/v-rossii-i-mire/item/43538-uchastniki-evrovideniya-2020-distantsionno-ispolnili-sovmestnuyu-pesnyu>Участники «Евровидения-2020» дистанционно исполнили совместную песню</a></td>
+      <td><a href=https://russian.rt.com/nopolitics/article/747025-evrovidenie-2020-final>Выступления на пустых улицах и хиты прошлых лет: как прошёл «финал» Евровидения-2020</a></td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    
+    <tr>
+      <td><a href=http://obozvrn.ru/archives/106199>Мошенники обманули жительницу Воронежской области на миллион</a></td>
+      <td><a href=http://newsroom24.ru/news/criminal/209714/>Нижегородка перевела 300 тысяч рублей «сотруднику» банка</a></td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    
+    <tr>
+      <td><a href=https://tvkrasnodar.ru/news/v_krasnodare_pojarnyie_tushat_krupnoe_vozgoranie_travyi-94324/>В Краснодаре пожарные тушат крупное возгорание травы</a></td>
+      <td><a href=https://www.oblgazeta.ru/society/incident/109615/>В Красноуфимске минувшей ночью 20  человек эвакуировали из горящего дома</a></td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    
+    <tr>
+      <td><a href=http://www.trud.ru/article/17-05-2020/1389893_putin_nazval_rossiju_otdelnoj_tsivilizatsiej.html>Путин назвал Россию отдельной цивилизацией</a></td>
+      <td><a href=https://www.pnp.ru/social/putin-budushhee-rossiyskoy-civilizacii-zavisit-ot-uspekha-v-razvitii-vysokikh-tekhnologiy.html>Путин: будущее российской цивилизации зависит от успеха в развитии высоких технологий</a></td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    
+  </tbody>
+</table>
+</details>
+
+
+        </div>
+    </main>
+</body>
+</html>
